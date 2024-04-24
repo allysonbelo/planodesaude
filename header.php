@@ -51,7 +51,7 @@
 <body <?php body_class(); ?>>
 
     <header>
-        Header
+        Header 
     </header>
 
     <main>

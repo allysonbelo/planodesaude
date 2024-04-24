@@ -18,4 +18,5 @@ function add_google_analytics_code()
     </script> -->
     <?php
 }
+
 add_action('wp_head', 'add_google_analytics_code');

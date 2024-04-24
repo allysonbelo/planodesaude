@@ -1,7 +1,7 @@
 </main>
 
 <footer>
-    Footer
+    Footer 
 </footer>
 
 <?php wp_footer(); ?>
