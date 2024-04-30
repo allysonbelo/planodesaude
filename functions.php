@@ -1,5 +1,7 @@
 <?php
 
+require get_template_directory() . '/inc/customizer.php';
+
 function pds_load_scripts()
 {
     wp_enqueue_style('pds-style', get_stylesheet_uri(), array(), '1.0', 'all');
