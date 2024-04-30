@@ -1,0 +1,9 @@
+body{
+    font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+}
+
+.wrapper{
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
