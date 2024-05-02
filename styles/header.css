@@ -3,6 +3,10 @@
     padding-top: 48px;
 }
 
+header li::before{
+    display: none;
+}
+
 .header_mobile .wrapper {
     display: flex;
     justify-content: space-between;
