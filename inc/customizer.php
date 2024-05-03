@@ -51,5 +51,26 @@ function pds_customizer($wp_customize)
             'type'  =>  'text',
         )
     );
+
+    // link cotação
+    // Seção para as configurações de link
+    $wp_customize->add_section('custom_link_settings', array(
+        'title' => __('Link Cotação', 'pds2024'),
+        'priority' => 30,
+    ));
+
+    // Configuração para o link personalizado
+    $wp_customize->add_setting('custom_link', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    // Controle para o link personalizado
+    $wp_customize->add_control('custom_link_control', array(
+        'label' => __('Link Personalizado', 'pds2024'),
+        'section' => 'custom_link_settings',
+        'settings' => 'custom_link',
+        'type' => 'text',
+    ));
 }
 add_action('customize_register', 'pds_customizer');

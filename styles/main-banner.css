@@ -1,0 +1,212 @@
+.main_banner {
+    border-radius: 0px 0px 20px 20px;
+    background-color: #5B8FCB;
+    padding-top: 45px;
+    position: relative;
+    min-height: 310px;
+    margin-bottom: 40px;
+}
+
+.main_banner h1 {
+    color: #FFFFFF;
+    position: relative;
+    z-index: 2;
+}
+
+.main_banner h2 {
+    color: #FFFFFF;
+    max-width: 240px;
+    font-weight: 400;
+    font-size: clamp(18px, 2.7vw, 28px);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.main_banner .banner_image {
+    position: absolute;
+    bottom: 0px;
+    right: 0%;
+    z-index: 1;
+}
+
+.main_banner_plans {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    column-gap: clamp(7px, 1vw, 14px);
+    bottom: -25px;
+}
+
+.main_banner_plans a {
+    text-decoration: none;
+}
+
+.plan {
+    width: clamp(112px, 24vw, 224px);
+    height: clamp(93px, 14vw, 187px);
+    border-radius: 14px;
+    background: #F2F2F2;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.plan svg {
+    height: clamp(39.5px, 6vw, 86.143px);
+    position: absolute;
+    top: clamp(16px, 3vw, 40px);
+    right: clamp(11px, 1vw, 21px);
+}
+
+.plan::before {
+    content: "";
+    width: clamp(32.5px, 5vw, 65px);
+    height: clamp(32.5px, 5vw, 65px);
+    background-color: rgba(91, 143, 203, 0.20);
+    border-radius: 50px;
+    position: absolute;
+    top: clamp(7px, 1vw, 20px);
+    right: 4px;
+}
+
+.plan span {
+    color: #707070;
+    font-size: clamp(12px, 1.6vw, 22px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 117.823%;
+    margin-bottom: clamp(10px, 1.4vw, 20px);
+    margin-left: clamp(6px, 1.4vw, 13px);
+}
+
+.plan span strong {
+    font-size: clamp(18px, 2vw, 34px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 117.823%;
+    display: block;
+    margin-top: 4px;
+}
+
+.main_banner .banner_image_desktop {
+    display: none;
+}
+
+.main_banner_plans .text_cotacao {
+    display: none;
+}
+
+@media screen and (min-width: 769px) {
+    .main_banner {
+        background-color: #FFFFFF;
+    }
+
+    .main_banner .wrapper {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        column-gap: 60px;
+    }
+
+    .main_banner .wrapper .main_banner_content {
+        max-width: clamp(333px, 45vw, 655px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: -110px;
+    }
+
+    .main_banner h1 {
+        color: #000000;
+    }
+
+    .main_banner h2 {
+        max-width: 100%;
+        color: #000000;
+    }
+
+    .main_banner_image {
+        background-color: #5B8FCB;
+        max-width: 410px;
+        height: clamp(424px, 53vw, 590px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 40px;
+        position: relative;
+        width: 100%;
+    }
+
+    .main_banner .banner_image {
+        display: none;
+    }
+
+    .main_banner .banner_image_desktop {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        height: 107%;
+    }
+
+    .main_banner h1 br {
+        display: none;
+    }
+
+    .plan {
+        transition: background-color .2s ease-in-out;
+    }
+
+    .plan:hover {
+        cursor: pointer;
+        background-color: #5B8FCB;
+    }
+
+    .plan:hover span {
+        color: #FFFFFF;
+    }
+
+    .plan:hover svg path {
+        stroke: #FFFFFF;
+    }
+
+    .main_banner_plans .text_cotacao {
+        position: absolute;
+        display: flex;
+        width: 222px;
+        height: 58px;
+        padding: 6px 1px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        border-radius: 38px;
+        background: #1E1E1E;
+
+        color: #FFF;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        visibility: hidden;
+    }
+
+    .main_banner_plans .text_cotacao::before{
+        content: "";
+        background-color: transparent;
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        top: -20px;
+    }
+
+
+    .main_banner_plans a:hover .text_cotacao{
+        visibility: visible;
+        transform: translateY(15px);
+    }
+
+}

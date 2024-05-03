@@ -27,6 +27,7 @@ header li::before{
     top: 0px;
     box-shadow: 0 0 2px #000;
     min-height: 100%;
+    z-index: 9;
 }
 
 .active .side_menu_mobile {
@@ -119,7 +120,8 @@ header li::before{
     .header_desktop {
         margin-top: 60px;
         height: 67px;
-        overflow: hidden;
+        position: relative;
+        z-index: 9;
 
         display: flex;
         align-items: center;

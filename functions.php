@@ -6,6 +6,10 @@ function pds_load_scripts()
 {
     wp_enqueue_style('pds-style', get_stylesheet_uri(), array(), '1.0', 'all');
     wp_enqueue_style('all-styles', get_theme_file_uri('/styles/all-styles.css'));
+
+    if(is_front_page()){
+        wp_enqueue_style('front-page', get_theme_file_uri('/styles/front-page.css'));
+    }
 }
 add_action('wp_enqueue_scripts', 'pds_load_scripts');
 
