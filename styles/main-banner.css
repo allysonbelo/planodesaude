@@ -46,7 +46,7 @@
 }
 
 .plan {
-    width: clamp(112px, 24vw, 224px);
+    width: clamp(112px, 14.6vw, 224px);
     height: clamp(93px, 14vw, 187px);
     border-radius: 14px;
     background: #F2F2F2;
@@ -176,8 +176,8 @@
     .main_banner_plans .text_cotacao {
         position: absolute;
         display: flex;
-        width: 222px;
-        height: 58px;
+        width: clamp(100px, 15vw, 222px);
+        height: clamp(20px, 5vw, 58px);
         padding: 6px 1px;
         justify-content: center;
         align-items: center;
@@ -185,9 +185,8 @@
         flex-shrink: 0;
         border-radius: 38px;
         background: #1E1E1E;
-
         color: #FFF;
-        font-size: 22px;
+        font-size: clamp(14px, 2vw, 22px);
         font-style: normal;
         font-weight: 700;
         line-height: normal;
