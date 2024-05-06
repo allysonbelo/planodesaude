@@ -8,7 +8,7 @@ body {
     margin: 0 auto;
 }
 
-h1 {
+h1, h2 {
     color: #000;
     font-size: clamp(24px, 4vw, 42px);
     font-style: normal;
@@ -18,10 +18,7 @@ h1 {
 
 h2 {
     color: #1E1E1E;
-    font-size: clamp(24px, 3.6vw, 38px);
-    font-style: normal;
-    font-weight: 700;
-    line-height: 117.823%;
+    font-weight: 500;
 }
 
 h3 {
