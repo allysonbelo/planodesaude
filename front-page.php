@@ -1,4 +1,5 @@
 <?php
+$custom_link = get_theme_mod('custom_link', '');
 get_header();
 get_template_part('/parts/main-banner');
 ?>
@@ -14,6 +15,16 @@ get_template_part('/parts/main-banner');
             <div class="planodesaude_grid_item"><span>Cotação gratuita e sem compromisso</span></div>
             <div class="planodesaude_grid_item"><span>Orçamento independente e personalizado</span></div>
             <div class="planodesaude_grid_item"><span>Melhores preços e vantagens</span></div>
+        </div>
+    </section>
+
+    <section class="planodesaude_cta">
+        <div class="planodesaude_cta_content">
+            <h2>Cuide bem de você e de quem você ama</h2>
+            <p>
+                Um problema de saúde que acontece conosco ou com nossa família pode representar uma despesa médica ou hospitalar inesperada, se não quisermos enfrentar as longas esperas do SUS.
+            </p>
+            <a href="<?php echo $custom_link ?>" target="_blank">Cotar plano de saúde agora!</a>
         </div>
     </section>
 </div>

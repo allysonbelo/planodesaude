@@ -74,6 +74,69 @@
     max-width: clamp(152px, 24vw, 198px);
 }
 
+/* Section CTA */
+.planodesaude_cta {
+    margin-top: clamp(50px, 8vw, 92px);
+    margin-bottom: 80px;
+    background: rgba(115, 167, 227, 1) url('../img/casal-abraçando-um-ao-outro-mobile.avif') no-repeat left center / cover;
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 34px 16px 22px 16px;
+    position: relative;
+    min-height: 260px;
+}
+
+.planodesaude_cta .planodesaude_cta_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 15px;
+    opacity: 1;
+}
+
+.planodesaude_cta::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.2;
+}
+
+.planodesaude_cta h2 {
+    font-weight: 700;
+    z-index: 2;
+}
+
+.planodesaude_cta p {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    z-index: 2;
+}
+
+.planodesaude_cta a {
+    display: flex;
+    font-size: 16px;
+    text-decoration: none;
+    color: #FFFFFF;
+    width: 100%;
+    height: 34px;
+    padding: 6px 1px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 38px;
+    background: #1E1E1E;
+    z-index: 2;
+}
+
+/* Section CTA */
+
 @media screen and (min-width: 769px) {
     .planodesaude {
         position: relative;
@@ -132,16 +195,44 @@
     .planodesaude_grid_item:nth-child(1) {
         background: #1E1E1E url('../img/mapa-brazil.avif') no-repeat center right / 131px;
     }
-    
+
     .planodesaude_grid_item:nth-child(2) {
         background: #1E1E1E url('../img/calculadora.avif') no-repeat center right / 116px;
     }
-    
+
     .planodesaude_grid_item:nth-child(3) {
         background: #1E1E1E url('../img/docs.avif') no-repeat center right / 116px;
     }
-    
+
     .planodesaude_grid_item:nth-child(4) {
         background: #1E1E1E url('../img/save-money.avif') no-repeat center right / 141px;
+    }
+
+    .planodesaude_cta {
+        background: rgba(115, 167, 227, 1) url('../img/casal-abraçando-um-ao-outro-desktop.avif') no-repeat left center / cover;
+        padding: 34px 62px 22px 16px;
+        min-height: 477px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .planodesaude_cta::before {
+        display: none;
+    }
+
+    .planodesaude_cta_content {
+        max-width: clamp(356px, 50vw, 698px);
+    }
+
+    .planodesaude_cta_content a {
+        height: 58px;
+        font-size: 18px;
+    }
+
+    .planodesaude_cta_content p {
+        font-size: 22px;
+        line-height: normal;
     }
 }
