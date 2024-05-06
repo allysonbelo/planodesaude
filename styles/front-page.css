@@ -1,1 +1,147 @@
 @import url('main-banner.css');
+
+.planodesaude {
+    margin-top: clamp(52px, 10vw, 100px);
+}
+
+.planodesaude h2 {
+    text-align: center;
+}
+
+.planodesaude h2 span {
+    color: #5B8FCB;
+    font-weight: 700;
+    font-size: clamp(24px, 4vw, 42px);
+    font-style: normal;
+    line-height: 117.823%;
+}
+
+.planodesaude p {
+    text-align: center;
+    color: #000;
+    text-align: center;
+    font-size: clamp(18px, 3vw, 28px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+.planodesaude_grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px 16px;
+    flex-wrap: wrap;
+}
+
+.planodesaude_grid_item {
+    width: 165px;
+    height: 178px;
+    flex-shrink: 0;
+    border-radius: 28px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.planodesaude_grid_item:nth-child(1) {
+    background: #4D72AA url('../img/mapa-brazil.avif') no-repeat center right / 83px;
+}
+
+.planodesaude_grid_item:nth-child(2) {
+    background: #4D72AA url('../img/calculadora.avif') no-repeat center right / 73px;
+}
+
+.planodesaude_grid_item:nth-child(3) {
+    background: #4D72AA url('../img/docs.avif') no-repeat center right / 73px;
+}
+
+.planodesaude_grid_item:nth-child(4) {
+    background: #4D72AA url('../img/save-money.avif') no-repeat center right / 89px;
+}
+
+.planodesaude_grid_item span {
+    color: #FFF;
+    text-align: center;
+    font-size: clamp(18px, 2.4vw, 28px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: block;
+    margin-bottom: 23px;
+    max-width: clamp(152px, 24vw, 198px);
+}
+
+@media screen and (min-width: 769px) {
+    .planodesaude {
+        position: relative;
+    }
+
+    .planodesaude::before {
+        content: "";
+        border-radius: 54px;
+        background: #EAEAEA;
+        width: 100%;
+        height: 507px;
+        display: block;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .planodesaude::after {
+        content: "Proteja quem você ama!";
+        color: #5B8FCB;
+        text-align: center;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 117.823%;
+        border-radius: 0px 0px 24px 24px;
+        background: #FFF;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translate(-50%, 0px);
+        padding: 15px 50px;
+    }
+
+    .planodesaude h2 {
+        padding-top: 96px;
+    }
+
+    .planodesaude p {
+        margin: 22px auto 42px auto;
+        max-width: 1034px;
+    }
+
+    .planodesaude_grid {
+        gap: 20px 33px;
+    }
+
+    .planodesaude_grid_item {
+        width: 262px;
+        height: 285px;
+    }
+
+    .planodesaude_grid_item span {
+        font-weight: 350;
+    }
+
+    .planodesaude_grid_item:nth-child(1) {
+        background: #1E1E1E url('../img/mapa-brazil.avif') no-repeat center right / 131px;
+    }
+    
+    .planodesaude_grid_item:nth-child(2) {
+        background: #1E1E1E url('../img/calculadora.avif') no-repeat center right / 116px;
+    }
+    
+    .planodesaude_grid_item:nth-child(3) {
+        background: #1E1E1E url('../img/docs.avif') no-repeat center right / 116px;
+    }
+    
+    .planodesaude_grid_item:nth-child(4) {
+        background: #1E1E1E url('../img/save-money.avif') no-repeat center right / 141px;
+    }
+}
