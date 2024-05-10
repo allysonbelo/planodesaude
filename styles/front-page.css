@@ -1,4 +1,5 @@
 @import url('main-banner.css');
+@import url('post-card.css');
 
 .planodesaude {
     margin-top: clamp(52px, 10vw, 100px);
@@ -84,6 +85,9 @@
     padding: 34px 16px 22px 16px;
     position: relative;
     min-height: 260px;
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .planodesaude_cta .planodesaude_cta_content {
@@ -137,7 +141,135 @@
 
 /* Section CTA */
 
+/* Section latest posts */
+.latest_posts_conatiner {
+    margin-top: clamp(40px, 8vw, 92px);
+}
+
+.latest_posts_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.latest_posts_header a {
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.latest_posts {
+    display: flex;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    padding-bottom: 20px;
+}
+
+.latest_posts_search {
+    margin: 17px 0px;
+}
+
+.latest_posts_category_list {
+    display: flex;
+    margin: 30px auto;
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.latest_posts_category_list li {
+    white-space: nowrap;
+}
+
+.latest_posts_category_list li::before {
+    display: none;
+}
+
+.latest_posts_category_list a {
+    text-decoration: none;
+    color: #585858;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+/* Section latest posts */
+
+.planodesaude_cta_content {
+    max-width: clamp(356px, 50vw, 698px);
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.post_card {
+    flex: 0 0 auto;
+    margin-right: 20px;
+}
+
 @media screen and (min-width: 769px) {
+
+    .latest_posts_category_list li {
+        white-space: normal;
+    }
+
+    .latest_posts_search .searchform {
+        width: clamp(190px, 20vw, 287px);
+    }
+
+    .latest_posts_category_list {
+        margin: 0px;
+        margin-left: 36px;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .latest_posts_category_list a {
+        font-size: 18px;
+        font-weight: 400;
+
+        border-radius: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 20px;
+    }
+
+    .latest_posts_category_list a:hover {
+        background: #5B8FCB;
+        color: #FFFFFF;
+    }
+
+    .latest_posts_search {
+        display: flex;
+        max-width: 1240px;
+        margin: 37px auto;
+        align-items: center;
+    }
+
+    .latest_posts_header {
+        display: none;
+    }
+
+    .latest_posts_header a {
+        display: none;
+    }
+
+    .post_card {
+        margin-right: 0px;
+    }
+
+    .latest_posts {
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+    }
+
     .planodesaude {
         position: relative;
     }
@@ -234,5 +366,25 @@
     .planodesaude_cta_content p {
         font-size: 22px;
         line-height: normal;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .header_search_mobile {
+        width: 100%;
+    }
+
+    .latest_posts_search {
+        flex-direction: column;
+        align-items: flex-start !important;
+        row-gap: 10px;
+    }
+
+    .latest_posts_search .searchform {
+        width: 100%;
+    }
+
+    .latest_posts_category_list{
+        margin-left: 0px;
     }
 }
