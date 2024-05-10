@@ -55,5 +55,6 @@ function pds_config()
         'flex-heigth' => true,
         'flex-width' => true
     ));
+
 }
 add_action('after_setup_theme', 'pds_config');
