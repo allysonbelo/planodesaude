@@ -1,0 +1,79 @@
+@import url('main-banner.css');
+
+
+.main_banner_content {
+    max-width: 60%;
+}
+
+.main_banner .banner_image_desktop {
+    display: block;
+    width: clamp(213px, 40vw, 379px);
+    height: auto;
+    transform: translate(30px, 0px);
+}
+
+.single_banner {
+    padding-top: clamp(17px, 10vw, 115px);
+}
+
+.main_banner .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 20px;
+}
+
+.main_banner_image {
+    background-color: #5B8FCB;
+    max-width: 290px;
+    height: clamp(284px, 53vw, 385px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    right: 0px;
+    overflow: hidden;
+}
+
+.single_banner .link_cotacao {
+    display: flex;
+    max-width: clamp(156px, 35vw, 371px);
+    width: 100%;
+    height: clamp(33px, 4vw, 46px);
+    padding: 6px 1px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 24px;
+    background: #1E1E1E;
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: relative;
+    z-index: 2;
+    text-decoration: none;
+    margin-top: clamp(15px, 2vw, 30px);
+}
+
+@media screen and (min-width: 768px) {
+    .main_banner .wrapper {
+        column-gap: 150px;
+        justify-content: center;
+
+    }
+
+    .main_banner .banner_image_desktop {
+        transform: translate(4px, 0px);
+    }
+
+    .main_banner_image {
+        position: relative;
+        overflow: visible;
+    }
+}
