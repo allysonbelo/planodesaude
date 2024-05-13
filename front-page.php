@@ -38,14 +38,14 @@ get_template_part('/parts/main-banner');
                 foreach ($category_ids as $category_id) {
                     $category = get_category($category_id);
                     if ($category && !is_wp_error($category)) {
-                        echo '<li><a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></li>';
+                        echo '<li class="category_item_list">' . esc_html($category->name) . '</li>';
                     }
                 }
                 ?>
             </ul>
 
         </div>
-        <div class="latest_posts">
+        <div class="latest_posts latest_posts_default">
             <?php
 
             $args = array(
@@ -66,6 +66,76 @@ get_template_part('/parts/main-banner');
 
             ?>
         </div>
+        <!-- categoy 279 -->
+        <div class="latest_posts category_section_279">
+            <?php
+
+            $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => 6,
+                'category__in' => 279,
+                'order' => 'DESC'
+            );
+
+            $latest_posts = new WP_Query($args);
+
+            if ($latest_posts->have_posts()) :
+                while ($latest_posts->have_posts()) : $latest_posts->the_post();
+                    get_template_part('parts/post-card');
+                endwhile;
+            endif;
+
+            wp_reset_postdata();
+
+            ?>
+        </div>
+        <!-- categoy 282 -->
+        <div class="latest_posts category_section_282">
+            <?php
+
+            $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => 6,
+                'category__in' => 282,
+                'order' => 'DESC'
+            );
+
+            $latest_posts = new WP_Query($args);
+
+            if ($latest_posts->have_posts()) :
+                while ($latest_posts->have_posts()) : $latest_posts->the_post();
+                    get_template_part('parts/post-card');
+                endwhile;
+            endif;
+
+            wp_reset_postdata();
+
+            ?>
+        </div>
+        <!-- categoy 278 -->
+        <div class="latest_posts category_section_278">
+            <?php
+
+            $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => 6,
+                'category__in' => 278,
+                'order' => 'DESC'
+            );
+
+            $latest_posts = new WP_Query($args);
+
+            if ($latest_posts->have_posts()) :
+                while ($latest_posts->have_posts()) : $latest_posts->the_post();
+                    get_template_part('parts/post-card');
+                endwhile;
+            endif;
+
+            wp_reset_postdata();
+
+            ?>
+        </div>
+
     </section>
 
     <section class="planodesaude_cta">
@@ -79,5 +149,42 @@ get_template_part('/parts/main-banner');
     </section>
 
 </div>
+
+<script>
+    let category_list = document.querySelectorAll('.category_item_list');
+    category_list.forEach((listItem) => {
+        listItem.addEventListener('click', function() {
+            // Remove a classe ativa de todos os itens da lista
+            category_list.forEach(item => item.classList.remove('active'));
+
+            // Adiciona a classe ativa ao item da lista clicado
+            this.classList.add('active');
+
+            let label = this.textContent;
+
+            // Oculta todas as seções
+            document.querySelectorAll('.latest_posts').forEach((section) => {
+                section.style.display = 'none';
+            });
+
+            switch (label) {
+                case 'Saúde e bem-estar':
+                    document.querySelector('.latest_posts_default').style.display = 'none';
+                    document.querySelector('.category_section_279').style.display = 'flex';
+                    break;
+                case 'Plano Odontológico':
+                    document.querySelector('.latest_posts_default').style.display = 'none';
+                    document.querySelector('.category_section_282').style.display = 'flex';
+                    break;
+                case 'Operadoras de planos de saúde':
+                    document.querySelector('.latest_posts_default').style.display = 'none';
+                    document.querySelector('.category_section_278').style.display = 'flex';
+                    break;
+                default:
+                    console.log('Label not recognized');
+            }
+        });
+    });
+</script>
 
 <?php get_footer() ?>
