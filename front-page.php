@@ -29,7 +29,7 @@ get_template_part('/parts/main-banner');
             </div>
             <ul class="latest_posts_category_list">
                 <li>
-                    <a href="/blog">Todas as categorias</a>
+                    <a href="<?php echo home_url('/blog')?>">Todas as categorias</a>
                 </li>
                 <?php
                 // IDs das três categorias específicas que você deseja exibir
