@@ -7,13 +7,14 @@
 
 .main_banner .banner_image_desktop {
     display: block;
-    width: clamp(213px, 40vw, 379px);
+    width: clamp(614px, 60vw, 900px);
     height: auto;
     transform: translate(30px, 0px);
 }
 
 .single_banner {
     padding-top: clamp(17px, 10vw, 115px);
+    overflow: hidden;
 }
 
 .main_banner .wrapper {
@@ -26,7 +27,7 @@
 .main_banner_image {
     background-color: #5B8FCB;
     max-width: 290px;
-    height: clamp(284px, 53vw, 385px);
+    height: clamp(314px, 53vw, 385px);
     display: flex;
     align-items: center;
     justify-content: center;

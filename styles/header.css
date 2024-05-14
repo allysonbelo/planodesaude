@@ -84,6 +84,7 @@ header li::before{
     position: absolute;
     right: 32px;
     top: 88px;
+    cursor: pointer;
 }
 
 .logo_mobile img {
