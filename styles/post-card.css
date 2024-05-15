@@ -55,7 +55,7 @@
 .post_card_excerpt {
     grid-area: excerpt;
     color: #000;
-    font-size: clamp(12px, 2.2vw, 18px);
+    font-size: clamp(12px, 1.8vw, 18px);
     font-style: normal;
     font-weight: 500;
     line-height: 117.823%;
@@ -109,34 +109,49 @@
     display: none;
 }
 
+.singler_content .single_post_author_link,
+.single_post_author_date,
+.single_post_author_time {
+    font-weight: bold;
+    text-decoration: none;
+    color: #484848;
+    font-size: clamp(12px, 1.9vw, 18px);
+}
+
+
 @media screen and (min-width: 769px) {
 
     .post_card_author {
         display: flex;
-        align-items: center;
         justify-content: center;
         height: 50px;
         border-radius: 48px;
         background-color: #FFFFFF;
         position: absolute;
-        top: 50%;
+        top: clamp(200px, 26.7vw, 400px);
         left: 50%;
         transform: translate(-50%, -10px);
-
         text-decoration: none;
         color: #1E1E1E;
-        font-size: 18px;
+        font-size: 15px;
         font-style: normal;
         line-height: normal;
-        display: flex;
         align-items: center;
         gap: 14px;
         padding-left: 8px;
         padding-right: 24px;
+        min-width: 200px;
     }
 
-    .post_card_author img{
+    .post_card_author img {
         border-radius: 20px;
+        position: absolute;
+        left: 8px;
+    }
+
+    .post_card_author span {
+        position: absolute;
+        left: 50px;
     }
 
     .post_card {

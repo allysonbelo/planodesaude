@@ -8,7 +8,7 @@ $custom_link = get_theme_mod('custom_link', ''); // Obtém o link personalizado 
             <h2>Para começar qual plano você gostaria de cotar?</h2>
             <div class="main_banner_plans">
                 <!-- Use onmouseover="preloadPage(this)" no link para realizar a chamada do script que faz o pre carregamento da pagina ao passar o mouse sobre o link -->
-                <a href="<?php echo $custom_link ?>"  target="_blank" >
+                <a href="<?php echo $custom_link ?>" target="_blank">
                     <div class="plan">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 94" fill="none">
                             <path d="M77 90V80.4286C77 75.3516 75.0772 70.4825 71.6547 66.8926C68.2322 63.3026 63.5902 61.2858 58.75 61.2858H22.25C17.4098 61.2858 12.7678 63.3026 9.3453 66.8926C5.92276 70.4825 4 75.3516 4 80.4286V90" stroke="#707070" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
@@ -18,7 +18,7 @@ $custom_link = get_theme_mod('custom_link', ''); // Obtém o link personalizado 
                     </div>
                     <span class="text_cotacao">Iniciar cotação</span>
                 </a>
-                <a href="<?php echo $custom_link ?>" target="_blank" >
+                <a href="<?php echo $custom_link ?>" target="_blank">
                     <div class="plan">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113 88" fill="none">
                             <path d="M80.3636 83.6328V74.7847C80.3636 70.0914 78.3523 65.5903 74.772 62.2716C71.1918 58.953 66.336 57.0885 61.2727 57.0885H23.0909C18.0277 57.0885 13.1718 58.953 9.5916 62.2716C6.01136 65.5903 4 70.0914 4 74.7847V83.6328" stroke="#707070" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
@@ -30,7 +30,7 @@ $custom_link = get_theme_mod('custom_link', ''); // Obtém o link personalizado 
                     </div>
                     <span class="text_cotacao">Iniciar cotação</span>
                 </a>
-                <a href="<?php echo $custom_link ?>" target="_blank" >
+                <a href="<?php echo $custom_link ?>" target="_blank">
                     <div class="plan">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103 92" fill="none">
                             <path d="M89.2037 22.5863H13.4671C8.23855 22.5863 4 26.747 4 31.8794V78.3451C4 83.4776 8.23855 87.6382 13.4671 87.6382H89.2037C94.4322 87.6382 98.6708 83.4776 98.6708 78.3451V31.8794C98.6708 26.747 94.4322 22.5863 89.2037 22.5863Z" stroke="#707070" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
@@ -43,8 +43,19 @@ $custom_link = get_theme_mod('custom_link', ''); // Obtém o link personalizado 
             </div>
         </div>
         <div class="main_banner_image">
-            <img class="banner_image" src="<?php echo get_theme_file_uri('/img/doctor-presenting-mobile.avif') ?>" alt="Doutor de jaleco branco sorrindo" loading="lazy">
-            <img class="banner_image_desktop" src="<?php echo get_theme_file_uri('/img/doctor-presenting-desktop.avif') ?>" alt="Doutor de jaleco branco sorrindo" loading="lazy">
+            <?php
+            if (is_home()) {
+            ?>
+                <img class="banner_image" src="<?php echo get_theme_file_uri('/img/homen-gritando-em-um-megaphone-mobile.avif') ?>" alt="Homen gritando em um megafone" loading="lazy">
+                <img class="banner_image_desktop" src="<?php echo get_theme_file_uri('/img/homen-gritando-em-um-megaphone.avif') ?>" alt="Homen gritando em um megafone" loading="lazy">
+            <?php
+            } else {
+            ?>
+                <img class="banner_image" src="<?php echo get_theme_file_uri('/img/doctor-presenting-mobile.avif') ?>" alt="Doutor de jaleco branco sorrindo" loading="lazy">
+                <img class="banner_image_desktop" src="<?php echo get_theme_file_uri('/img/doctor-presenting-desktop.avif') ?>" alt="Doutor de jaleco branco sorrindo" loading="lazy">
+            <?php
+            }
+            ?>
         </div>
     </div>
 </div>

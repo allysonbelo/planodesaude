@@ -19,7 +19,19 @@
     </a>
     <div class="post_card_info">
         <span class="post_card_info_date"><?php echo get_the_date('d/m/y') ?> </span>
-        <span class="post_card_info_category"> <?php the_category(); ?></span>
+        <!-- <span class="post_card_info_category"> <?php the_category(); ?></span> -->
+        <?php
+        $categorias = get_the_category();
+        if (!empty($categorias)) {
+            // Pega o ID da primeira categoria
+            $categoria_id = $categorias[0]->term_id;
+            // Pega o link para a primeira categoria
+            $categoria_link = get_category_link($categoria_id);
+            // Exibe o nome da primeira categoria com um link
+            echo '<a href="' . esc_url($categoria_link) . '" class="post_card_info_category">' . esc_html($categorias[0]->name) . '</a>';
+        }
+        ?>
+
     </div>
     <p class="post_card_excerpt">
         <?php
@@ -40,8 +52,8 @@
             <?php
             $author_id = get_the_author_meta('ID');
             echo get_avatar($author_id, 37);
-            the_author();
             ?>
+            <span><?php the_author(); ?></span>
         </div>
     </a>
 </div>

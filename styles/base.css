@@ -8,11 +8,12 @@ body {
     margin: 0 auto;
 }
 
-h1, h2 {
+h1,
+h2 {
     color: #000;
     font-size: clamp(24px, 4vw, 42px);
     font-style: normal;
-    font-weight: 700;
+    font-weight: 700; 
     line-height: 117.823%;
 }
 
@@ -63,7 +64,7 @@ span {
 }
 
 body table {
-    width: 80%;
+    width: 100%;
     border-collapse: collapse;
     background: rgba(91, 143, 203, .5);
     margin: 20px auto;
@@ -92,7 +93,7 @@ td {
     border: 1px solid #5B8FCB !important;
 }
 
-ul{
+ul {
     margin-left: 30px;
 }
 
@@ -108,3 +109,12 @@ ul li::before {
     top: -3px;
     left: -5px;
 }
+
+.back_to_home {
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+} 

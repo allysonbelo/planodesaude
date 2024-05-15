@@ -11,6 +11,14 @@ function pds_load_scripts()
         wp_enqueue_style('front-page', get_theme_file_uri('/styles/front-page.css'));
     }
 
+    if (is_home()) {
+        wp_enqueue_style('blog', get_theme_file_uri('/styles/blog.css'));
+    }
+
+    if (is_single()) {
+        wp_enqueue_style('single', get_theme_file_uri('/styles/single.css'));
+    }
+
     // loading scripts
     // wp_enqueue_script('pre-loading', get_template_directory_uri() . '/js/pre_loading_page.js', array(), '1.0', true);
 }
@@ -50,8 +58,8 @@ function pds_config()
     );
 
     add_theme_support('custom-logo', array(
-        'height' => 38,
-        'width' => 210,
+        // 'height' => 38,
+        // 'width' => 210,
         'flex-heigth' => true,
         'flex-width' => true
     ));
