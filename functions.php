@@ -58,8 +58,8 @@ function pds_config()
     );
 
     add_theme_support('custom-logo', array(
-        'height' => 38,
-        'width' => 210,
+        // 'height' => 38,
+        // 'width' => 210,
         'flex-heigth' => true,
         'flex-width' => true
     ));
