@@ -1,0 +1,196 @@
+/* Section CTA */
+.planodesaude_cta {
+    margin-top: clamp(10px, 2vw, 32px);
+    margin-bottom: clamp(20px, 8vw, 100px);
+    background: rgba(115, 167, 227, 1) url('../../../../wp-content/themes/pds2024/img/casal-abraçando-um-ao-outro-desktop.avif') no-repeat left center / cover;
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 15px;
+    position: relative;
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.planodesaude_cta .planodesaude_cta_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.planodesaude_cta::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #5b8fcb;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.planodesaude_cta .planodesaude_cta_content h2 {
+    font-weight: 700;
+    z-index: 2;
+    margin: 0px;
+
+    color: #000;
+    font-size: clamp(24px, 3vw, 42px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 117.823%;
+}
+
+.planodesaude_cta p {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    z-index: 2;
+    margin: 20px 0px;
+}
+
+.planodesaude_cta a {
+    display: flex;
+    font-size: 16px;
+    text-decoration: none;
+    color: #FFFFFF !important;
+    width: 100%;
+    height: 34px;
+    padding: 6px 1px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 38px;
+    background: #1E1E1E;
+    z-index: 2;
+}
+
+.planodesaude_aside_cta {
+    display: none;
+}
+
+@media screen and (min-width: 769px) {
+
+    .planodesaude_aside_cta {
+        display: flex;
+        flex-direction: column;
+        float: left;
+        clear: both;
+        max-width: 295px;
+        width: 100%;
+        margin-right: 20px;
+        height: 1029px;
+        position: relative;
+        overflow: hidden;
+        background-color: #aedfe6;
+        padding: 27px;
+        border-radius: 30px;
+        row-gap: 20px;
+    }
+
+    .single_container .planodesaude_aside_cta h2 {
+        font-weight: 700;
+        z-index: 2;
+        margin: 0px;
+        color: #000;
+        font-size: clamp(24px, 3vw, 28px);
+        font-style: normal;
+        font-weight: 700;
+        line-height: 117.823%;
+        position: relative;
+        z-index: 2;
+    }
+
+    .single_container .planodesaude_aside_cta p {
+        color: #000;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        position: relative;
+        z-index: 2;
+        margin: 0;
+    }
+
+    .single_container .planodesaude_aside_cta a {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        height: 40px;
+        padding: 6px 1px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        border-radius: 38px;
+        background: #1E1E1E;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .planodesaude_aside_cta img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    .cta_paragraph_single {
+        display: none;
+    }
+
+    .planodesaude_cta {
+        background: url('../img/casal-abraçando-um-ao-outro-desktop.avif') no-repeat left center / cover;
+        padding: 34px 62px 22px 16px;
+        min-height: 477px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .single_container .planodesaude_cta {
+        background: url('../img/casal-abraçando-um-ao-outro-desktop.avif') no-repeat left top / cover;
+        min-height: auto;
+        margin: 20px 0px;
+    }
+
+    .planodesaude_cta::before {
+        display: none;
+    }
+
+    .planodesaude_cta_content {
+        max-width: clamp(356px, 50vw, 698px);
+    }
+
+    .planodesaude_cta_content a {
+        height: 58px;
+        font-size: 18px;
+    }
+
+    .planodesaude_cta .planodesaude_cta_content p {
+        font-size: 22px;
+        line-height: normal;
+        margin: 20px 0px !important;
+    }
+
+    .planodesaude_cta h2 {
+        line-height: 117%;
+    }
+
+    .planodesaude_cta .cta_button_single_style_1 {
+        height: 40px;
+        color: #FFF;
+        font-size: 18px;
+        font-style: normal;
+        line-height: normal;
+        margin-top: 20px;
+    }
+
+}

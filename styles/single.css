@@ -1,6 +1,6 @@
 @import url('main-banner.css');
 @import url('post-card.css');
-
+@import url('ctas.css');
 
 .main_banner_content {
     max-width: 53%;
@@ -265,6 +265,10 @@
 
     }
 
+    .singler_content .wp-element-caption{
+        min-width: 200px;
+    }
+
     .main_banner .banner_image_desktop {
         transform: translate(4px, 0px);
     }
@@ -274,12 +278,30 @@
         overflow: visible;
     }
 
+    .singler_content .wp-caption.aligncenter {
+        display: table-cell;
+    }
+
+    .singler_content figure{
+        display: flex;
+    }
+
+    .wp-block-image .aligncenter{
+        display: contents;
+    }
+
     .singler_content img {
         border-radius: 28px;
-        display: inline-flex;
+        /* display: inline-flex; */
     }
 
     .single_post_social img {
         border-radius: 0px;
+    }
+
+    .singler_content p img{
+        display: flex;
+        width: 100%;
+        max-width: 730px;
     }
 }

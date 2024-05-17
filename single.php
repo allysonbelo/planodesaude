@@ -38,7 +38,7 @@ get_template_part('/parts/single-banner');
                             </svg>
                             <span>
                                 <?php
-                                $content = get_post_field('post_content', get_the_ID());
+                                $content = get_the_content();
                                 $word_count = str_word_count(strip_tags($content));
                                 $reading_time = ceil($word_count / 200); // Considerando uma média de 200 palavras por minuto
                                 echo '<span class="single_post_author_time">' . $reading_time . ' minutos </span> de leitura ';
@@ -56,7 +56,51 @@ get_template_part('/parts/single-banner');
                         ?>
 
                     </div>
-                    <?php the_content(); ?>
+
+                    <?php
+                    $content = apply_filters('the_content', get_the_content());
+                    $content_parts = get_extended($content);
+                    $paragraphs = explode("</p>", $content_parts['main']);
+                    $min_paragraphs = 16;
+                    $image_found = false;
+
+                    // Verifica se algum parágrafo contém uma imagem
+                    foreach ($paragraphs as $paragraph) {
+                        if (strpos($paragraph, '<img') !== false) {
+                            $image_found = true;
+                            break;
+                        }
+                    }
+
+                    if (count($paragraphs) >= $min_paragraphs && $image_found) {
+                        $count = 0;
+                        foreach ($paragraphs as $paragraph) {
+                            // Verifica se o parágrafo está dentro de uma div
+                            if (strpos($paragraph, '<div') === false) {
+                                echo $paragraph . "</p>";
+                                $count++;
+
+                                if ($count == 5) {
+                                    include(get_template_directory() . '/parts/vertical-cta.php');
+                                }
+
+                                // Adiciona o CTA após o parágrafo se o contador for 5
+                                if ($count == 7) {
+                                    include(get_template_directory() . '/parts/horizontal-cta.php');
+                                }
+                            } else {
+                                // Se o parágrafo estiver dentro de uma div, adiciona o conteúdo sem adicionar o CTA
+                                echo $paragraph . "</p>";
+                            }
+                        }
+                    } else {
+                        the_content();
+                    }
+                    ?>
+
+
+
+
 
                     <div class="single_post_social">
                         <?php
@@ -74,7 +118,7 @@ get_template_part('/parts/single-banner');
                             <a href="<?php echo $email_url; ?>" target="_blank" aria-label="email icon">
                                 <img src="<?php echo get_theme_file_uri('/img/email-icon.png') ?>" alt="Icone de compartilhamento por email">
                             </a>
-                    
+
                             <a href="<?php echo $linkedin_url; ?>" target="_blank" aria-label="linkedin icon">
                                 <img src="<?php echo get_theme_file_uri('./img/linkedin-icon.png') ?>" alt="Icone de compartilhamento no LinkedIn">
                             </a>
@@ -83,7 +127,7 @@ get_template_part('/parts/single-banner');
                             </a>
                         </div>
                     </div>
-                    
+
 
                     <h2 class="related_title">Artigos relacionados</h2>
                     <div class="latest_posts latest_posts_default">
