@@ -29,7 +29,7 @@ get_template_part('/parts/main-banner');
             </div>
             <ul class="latest_posts_category_list">
                 <li>
-                    <a href="<?php echo home_url('/blog')?>">Todas as categorias</a>
+                    <a href="<?php echo home_url('/blog') ?>">Todas as categorias</a>
                 </li>
                 <?php
                 // IDs das três categorias específicas que você deseja exibir
@@ -138,15 +138,7 @@ get_template_part('/parts/main-banner');
 
     </section>
 
-    <section class="planodesaude_cta">
-        <div class="planodesaude_cta_content">
-            <h2>Cuide bem de você e de quem você ama</h2>
-            <p>
-                Um problema de saúde que acontece conosco ou com nossa família pode representar uma despesa médica ou hospitalar inesperada, se não quisermos enfrentar as longas esperas do SUS.
-            </p>
-            <a href="<?php echo $custom_link ?>" target="_blank">Cotar plano de saúde agora!</a>
-        </div>
-    </section>
+    <?php get_template_part('/parts/horizontal-cta') ?>
 
 </div>
 
