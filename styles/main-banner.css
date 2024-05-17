@@ -110,6 +110,8 @@
         flex-direction: row-reverse;
         justify-content: flex-end;
         column-gap: 60px;
+        max-width: 1240px;
+        margin: 0 auto;
     }
 
     .main_banner .wrapper .main_banner_content {

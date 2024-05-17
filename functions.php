@@ -27,6 +27,11 @@ function pds_load_scripts()
         wp_enqueue_style('page', get_theme_file_uri('/styles/page.css'));
     }
 
+    if ( is_page_template('template-termos.php') ) {
+        wp_enqueue_style('template-termos', get_theme_file_uri('/styles/termos.css'));
+    }
+    
+
     // loading scripts
     // wp_enqueue_script('pre-loading', get_template_directory_uri() . '/js/pre_loading_page.js', array(), '1.0', true);
 }
