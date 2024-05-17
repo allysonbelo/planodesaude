@@ -23,6 +23,10 @@ function pds_load_scripts()
         wp_enqueue_style('404', get_theme_file_uri('/styles/404.css'));
     }
 
+    if (is_page()) {
+        wp_enqueue_style('page', get_theme_file_uri('/styles/page.css'));
+    }
+
     // loading scripts
     // wp_enqueue_script('pre-loading', get_template_directory_uri() . '/js/pre_loading_page.js', array(), '1.0', true);
 }
