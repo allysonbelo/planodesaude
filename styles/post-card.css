@@ -70,6 +70,10 @@
     margin: 0;
 }
 
+.post_card_info a {
+    text-decoration: none;
+}
+
 .post_card_info_category .post-categories a {
     text-decoration: none;
     color: #585858;
