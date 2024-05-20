@@ -40,29 +40,6 @@
     overflow: hidden;
 }
 
-.single_banner .link_cotacao {
-    display: flex;
-    max-width: clamp(156px, 35vw, 371px);
-    width: 100%;
-    height: clamp(33px, 4vw, 46px);
-    padding: 6px 1px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-    border-radius: 24px;
-    background: #1E1E1E;
-    color: #FFF;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    position: relative;
-    z-index: 2;
-    text-decoration: none;
-    margin-top: clamp(15px, 2vw, 30px);
-}
-
 .singler_content {
     display: flex;
     flex-direction: column;
