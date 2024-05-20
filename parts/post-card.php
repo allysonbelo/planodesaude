@@ -47,13 +47,16 @@
         ?>
     </p>
     <a class="post_card_link" href="<?php the_permalink(); ?>">Ler artigo</a>
-    <a href="<?php the_author_link(); ?>">
+    
+    <?php
+    $author_id = get_the_author_meta('ID');
+    $author_url = get_author_posts_url($author_id);
+    ?>
+
+    <a href="<?php echo esc_url($author_url); ?>" aria-label="<?php echo esc_attr(sprintf(__('Posts by %s', 'your-theme-textdomain'), get_the_author())); ?>">
         <div class="post_card_author">
-            <?php
-            $author_id = get_the_author_meta('ID');
-            echo get_avatar($author_id, 37);
-            ?>
-            <span><?php the_author(); ?></span>
+            <?php echo get_avatar($author_id, 37); ?>
+            <span><?php echo get_the_author(); ?></span>
         </div>
     </a>
 </div>
