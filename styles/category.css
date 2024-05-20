@@ -20,3 +20,34 @@
     gap: 20px clamp(15px, 2vw, 40px);
     justify-content: center;
 }
+
+.pdspagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 76px;
+    margin-bottom: clamp(120px, 12vw, 220px);
+}
+
+.pdspagination a, .pdspagination span {
+    text-decoration: none;
+    color: #000;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 22px;
+    height: 22px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pdspagination span.current {
+    background-color: #000;
+    color: #fff;
+    width: 22px;
+    height: 22px;
+    border-radius: 3px;
+}

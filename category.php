@@ -51,23 +51,25 @@ get_template_part('/parts/single-banner');
             <?php endif; ?>
 
             </div>
-            <?php
-            $big = 999999999;
+            <div class="pdspagination">
+                <?php
+                $big = 999999999;
 
-            echo paginate_links(array(
-                'base'      => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-                'format'    => '?paged=%#%',
-                'current'   => max(1, get_query_var('paged')),
-                'total'     => $category_posts->max_num_pages,
-                'mid_size'  => 2,
-                'prev_text' => __('<svg xmlns="http://www.w3.org/2000/svg" width="7" height="11" viewBox="0 0 7 11" fill="none">
+                echo paginate_links(array(
+                    'base'      => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+                    'format'    => '?paged=%#%',
+                    'current'   => max(1, get_query_var('paged')),
+                    'total'     => $category_posts->max_num_pages,
+                    'mid_size'  => 2,
+                    'prev_text' => __('<svg xmlns="http://www.w3.org/2000/svg" width="7" height="11" viewBox="0 0 7 11" fill="none">
                     <path d="M6 9.21484L1 5.21484L6 1.21484" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>', 'textdomain'),
-                'next_text' => __('<svg xmlns="http://www.w3.org/2000/svg" width="6" height="11" viewBox="0 0 6 11" fill="none">
+                    'next_text' => __('<svg xmlns="http://www.w3.org/2000/svg" width="6" height="11" viewBox="0 0 6 11" fill="none">
                     <path d="M1 9.21484L5 5.21484L1 1.21484" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>', 'textdomain'),
-            ));
-            ?>
+                ));
+                ?>
+            </div>
     </div>
 </div>
 
