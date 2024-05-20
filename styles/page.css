@@ -17,16 +17,14 @@
     margin-bottom: 23px;
 }
 
-.page_info {
+.page_content .page_info {
     border-radius: 30px;
     background: #5B8FCB;
     padding: clamp(15px, 3vw, 33px) clamp(10px, 5vw, 80px);
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
+    margin-bottom: 20px;
 }
 
-.page_info h3 {
+.page_content .page_info h3 {
     color: #FFF;
     font-size: clamp(24px, 4vw, 28px);
     font-style: normal;
@@ -34,23 +32,25 @@
     line-height: 117.823%;
 }
 
-.page_info p,
-.page_info a {
+.page_content .page_info p,
+.page_content .page_info a {
     color: #FFF;
     font-size: clamp(14px, 2vw, 18px);
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-decoration: none;
+    margin: 0;
+    margin: 15px 0;
 }
 
-.page_info a {
+.page_content .page_info a {
     font-weight: 500;
     gap: 10px;
     display: flex;
 }
 
-.page_info a::before {
+.page_content .page_info a::before {
     content: '';
     background: url('../img/email-contato.png') no-repeat center center / cover;
     width: 30px;
