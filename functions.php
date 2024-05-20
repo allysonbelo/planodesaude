@@ -34,6 +34,10 @@ function pds_load_scripts()
     if(is_category()){
         wp_enqueue_style('category', get_theme_file_uri('/styles/category.css'));
     }
+
+    if(is_tag()){
+        wp_enqueue_style('category', get_theme_file_uri('/styles/category.css'));
+    }
     
 
     // loading scripts
