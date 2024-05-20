@@ -47,6 +47,7 @@
         ?>
     </p>
     <a class="post_card_link" href="<?php the_permalink(); ?>">Ler artigo</a>
+    
     <?php
     $author_id = get_the_author_meta('ID');
     $author_url = get_author_posts_url($author_id);
