@@ -42,6 +42,10 @@ function pds_load_scripts()
     if(is_search()){
         wp_enqueue_style('category', get_theme_file_uri('/styles/category.css'));
     }
+
+    if(is_author()){
+        wp_enqueue_style('author', get_theme_file_uri('/styles/author.css'));
+    }
     
 
     // loading scripts
