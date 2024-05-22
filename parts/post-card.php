@@ -40,7 +40,7 @@
 
         if (strlen($excerpt) > $excerpt_length) {
             $excerpt = substr($excerpt, 0,  $excerpt_length);
-            $excerpt = substr($excerpt, 0, strrpos($excerpt, ''));
+            $excerpt = substr($excerpt, 0, strrpos($excerpt, ' '));
             $excerpt .= '...';
         }
         echo $excerpt;
