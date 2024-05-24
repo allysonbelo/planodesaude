@@ -107,6 +107,8 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    row-gap: 22px;
+    margin-top: clamp(40px, 10vw, 75px);
 }
 
 .pds_theme_title {
@@ -115,6 +117,58 @@
 
 .pds_theme_cat {
     order: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.pds_theme_cat a{
+    text-decoration: none;
+    display: contents;
+}
+
+.pds_theme_cat_card {
+    width: 100%;
+    height: 121px;
+    border-radius: 12px;
+    flex: 1 1 170px;
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+}
+
+.pds_theme_cat_card:nth-child(1) {
+    background: #73A7E3 url('../img/card1.avif') no-repeat center center / cover;
+}
+
+.pds_theme_cat > a:nth-child(2) > div {
+    background: #E1CC60 url('../img/card2.avif') no-repeat center center / cover;
+}
+
+.pds_theme_cat > a:nth-child(3) > div {
+    background: #9ACC72 url('../img/card3.avif') no-repeat center center / cover;
+}
+
+.pds_theme_cat > a:nth-child(4) > div {
+    background: #A365D3 url('../img/card4.avif') no-repeat center center / cover;
+}
+
+.pds_theme_cat > a:nth-child(5) > div {
+    background: #F57272 url('../img/card5.avif') no-repeat center center / cover;
+}
+
+.pds_ca_card_item {
+    color: #FFF;
+    font-size: clamp(16px, 2vw, 28px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 117.823%;
+    bottom: 10px;
+    left: 10px;
+    display: block;
+    width: 100%;
 }
 
 .pds_theme_cards {
@@ -140,7 +194,7 @@
     color: #ffffff;
     margin-right: auto;
     width: 90%;
-    
+
 }
 
 .pds_theme_search .search_container input::placeholder {
@@ -174,8 +228,14 @@
 
 @media screen and (min-width: 769px) {
 
+    .pds_theme_cat_card {
+        width: 236px;
+        height: 199px;
+    }
+
     .pds_theme_title {
         order: 2;
+        margin-top: 19px;
     }
 
     .pds_theme_cat {

@@ -186,7 +186,32 @@ get_template_part('/parts/main-banner');
                 <?php get_search_form(); ?>
             </div>
             <div class="pds_theme_cat">
-                cat
+                <!-- Pegue o link da categoria com ID  279-->
+                <a href="<?php echo get_category_link(279)?>">
+                    <div class="pds_theme_cat_card">
+                        <span class="pds_ca_card_item">Saúde e bem estar</span>
+                    </div>
+                </a>
+                <a href="<?php echo get_category_link(278)?>">
+                    <div class="pds_theme_cat_card">
+                        <span class="pds_ca_card_item">Operadoras de plano de saúde</span>
+                    </div>
+                </a>
+                <a href="<?php echo home_url('/?s=preciso+de+plano+de+saúde')?>">
+                    <div class="pds_theme_cat_card">
+                        <span class="pds_ca_card_item">Porque eu preciso de pds?</span>
+                    </div>
+                </a>
+                <a href="<?php echo get_category_link(282)?>">
+                    <div class="pds_theme_cat_card">
+                        <span class="pds_ca_card_item">Planos odontologicos</span>
+                    </div>
+                </a>
+                <a href="<?php echo home_url('/?s=tabela+de+preço')?>">
+                    <div class="pds_theme_cat_card">
+                        <span class="pds_ca_card_item">Tabelas de preços</span>
+                    </div>
+                </a>
             </div>
             <div class="pds_theme_cards">
                 cards
