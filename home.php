@@ -20,9 +20,11 @@ get_template_part('/parts/main-banner');
                 foreach ($category_ids as $category_id) {
                     $category = get_category($category_id);
                     if ($category && !is_wp_error($category)) {
-                        echo '<li class="category_item_list">' . esc_html($category->name) . '</li>';
+                        $category_url = get_category_link($category->term_id);
+                        echo '<a href="' . esc_url($category_url) . '"><li class="category_item_list">' . esc_html($category->name) . '</li></a>';
                     }
                 }
+
                 ?>
             </ul>
 
@@ -187,36 +189,103 @@ get_template_part('/parts/main-banner');
             </div>
             <div class="pds_theme_cat">
                 <!-- Pegue o link da categoria com ID  279-->
-                <a href="<?php echo get_category_link(279)?>">
+                <a href="<?php echo get_category_link(279) ?>">
                     <div class="pds_theme_cat_card">
                         <span class="pds_ca_card_item">Saúde e bem estar</span>
                     </div>
                 </a>
-                <a href="<?php echo get_category_link(278)?>">
+                <a href="<?php echo get_category_link(278) ?>">
                     <div class="pds_theme_cat_card">
                         <span class="pds_ca_card_item">Operadoras de plano de saúde</span>
                     </div>
                 </a>
-                <a href="<?php echo home_url('/?s=preciso+de+plano+de+saúde')?>">
+                <a href="<?php echo home_url('/?s=preciso+de+plano+de+saúde') ?>">
                     <div class="pds_theme_cat_card">
                         <span class="pds_ca_card_item">Porque eu preciso de pds?</span>
                     </div>
                 </a>
-                <a href="<?php echo get_category_link(282)?>">
+                <a href="<?php echo get_category_link(282) ?>">
                     <div class="pds_theme_cat_card">
                         <span class="pds_ca_card_item">Planos odontologicos</span>
                     </div>
                 </a>
-                <a href="<?php echo home_url('/?s=tabela+de+preço')?>">
+                <a href="<?php echo home_url('/?s=tabela+de+preço') ?>">
                     <div class="pds_theme_cat_card">
                         <span class="pds_ca_card_item">Tabelas de preços</span>
                     </div>
                 </a>
             </div>
             <div class="pds_theme_cards">
-                cards
+                <?php
+                $args = array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 3,
+                    'ignore_sticky_posts' => 1,
+                    'offset' => 4
+                );
+
+                $card_cat = new WP_Query($args);
+
+                if ($card_cat->have_posts()) {
+                    while ($card_cat->have_posts()) {
+                        $card_cat->the_post();
+
+                        echo get_template_part('/parts/post-card');
+                    }
+
+                    wp_reset_postdata();
+                }
+                ?>
+
             </div>
         </div>
     </div>
 </section>
+
+<section>
+    <div class="wrapper">
+        <div class="blog_authors">
+            <h2 id="blog_latest_posts" class="blog_title_h2">Top autores</h2>
+            <div class="blog_authors_cards">
+                <?php
+                $admin_ids = array(3796, 3725);
+
+                $admin_users = array_map(function ($id) {
+                    return get_userdata($id);
+                }, $admin_ids);
+
+                if (!empty($admin_users)) {
+
+
+                    foreach ($admin_users as $admin) {
+                        if ($admin && in_array('administrator', $admin->roles)) {
+                            $admin_name = $admin->display_name;
+                            $admin_avatar = get_avatar($admin->ID, 142);
+                            $admin_url = get_author_posts_url($admin->ID);
+
+                            echo '<div class="blog_authors_card">';
+                            echo '<a class="blog_authors_card_link" href="' . esc_url($admin_url) . '">';
+                            echo $admin_avatar;
+                            echo '<span class="blog_authors_card_name">' . esc_html($admin_name) . '</span>';
+                            echo '<span  class="blog_authors_card_date">' . date_i18n('F \d\e Y', strtotime(get_the_author_meta('user_registered'))) . '</span>';
+                            echo '</a>';
+                            echo '<a href="' . esc_url($admin_url) . '" class="link_blog_author" href="">Ver artigos</a>';
+                            echo '</div>';
+                        }
+                    }
+                } else {
+                    echo '<p>No administrators found.</p>';
+                }
+                ?>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="blog_cta">
+    <div class="wrapper">
+        <?php get_template_part('/parts/horizontal-cta') ?>
+    </div>
+</section>
+
 <?php get_footer() ?>
