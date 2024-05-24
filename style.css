@@ -13,3 +13,7 @@
     Text Domain: pds2024
     Tags: blog, custom-menu, custom-logo, featured-images, ACF
 */
+
+html{
+    scroll-behavior: smooth;
+}

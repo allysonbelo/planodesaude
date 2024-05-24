@@ -85,10 +85,15 @@
 .author_all_posts_title {
     font-size: clamp(24px, 4vw, 32px);
     font-weight: 800;
+    margin-bottom: 42px;
+    max-width: 1240px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .author_all_cards {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     flex-wrap: wrap;
     gap: 5px;
     justify-content: space-between;
@@ -154,12 +159,18 @@ a.author_post_card_link {
 @media screen and (min-width: 769px) {
 
     .author_all_cards {
-        gap: 10px;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+        max-width: 1240px;
+        margin: 0 auto;
     }
 
     .author_container {
         display: flex;
         column-gap: 76px;
+        max-width: 1240px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .author_info,
