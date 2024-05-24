@@ -74,7 +74,7 @@
                         'posts_per_page' => 9,
                         'author' => $author_id,
                         'paged' => $paged,
-                        
+                        'ignore_sticky_posts' => 1,
                     );
 
                     $author_query = new WP_Query($all_posts);

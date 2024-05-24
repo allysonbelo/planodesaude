@@ -51,7 +51,8 @@ get_template_part('/parts/main-banner');
             $args = array(
                 'post_type' => 'post',
                 'posts_per_page' => 6,
-                'order' => 'DESC'
+                'order' => 'DESC',
+                'ignore_sticky_posts' => 1,
             );
 
             $latest_posts = new WP_Query($args);
@@ -74,7 +75,8 @@ get_template_part('/parts/main-banner');
                 'post_type' => 'post',
                 'posts_per_page' => 6,
                 'category__in' => 279,
-                'order' => 'DESC'
+                'order' => 'DESC',
+                'ignore_sticky_posts' => 1,
             );
 
             $latest_posts = new WP_Query($args);
@@ -97,7 +99,8 @@ get_template_part('/parts/main-banner');
                 'post_type' => 'post',
                 'posts_per_page' => 6,
                 'category__in' => 282,
-                'order' => 'DESC'
+                'order' => 'DESC',
+                'ignore_sticky_posts' => 1,
             );
 
             $latest_posts = new WP_Query($args);
