@@ -77,7 +77,7 @@
 }
 
 /* Section latest posts */
-.latest_posts_conatiner {
+.latest_posts_container {
     margin-top: clamp(40px, 8vw, 92px);
 }
 

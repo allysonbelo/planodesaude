@@ -18,7 +18,7 @@ get_template_part('/parts/main-banner');
         </div>
     </section>
 
-    <section class="latest_posts_conatiner">
+    <section class="latest_posts_container">
         <div class="latest_posts_header">
             <h2>Últimos artigos</h2>
             <a href="#">+ Ver todos</a>

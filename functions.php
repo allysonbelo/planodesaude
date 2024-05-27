@@ -31,6 +31,10 @@ function pds_load_scripts()
         wp_enqueue_style('template-termos', get_theme_file_uri('/styles/termos.css'));
     }
 
+    if ( is_page_template('template-faq.php') ) {
+        wp_enqueue_style('template-faq', get_theme_file_uri('/styles/faq.css'));
+    }
+
     if(is_category()){
         wp_enqueue_style('category', get_theme_file_uri('/styles/category.css'));
     }
