@@ -15,7 +15,7 @@
 
 .page_404_img::before {
     content: '';
-    background-color: #5B8FCB;
+    background-color: var(--color-primary);
     width: 200px;
     height: 300px;
     position: absolute;

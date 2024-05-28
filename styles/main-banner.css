@@ -1,6 +1,6 @@
 .main_banner {
     border-radius: 0px 0px 20px 20px;
-    background-color: #5B8FCB;
+    background-color: var(--color-primary);
     padding-top: 45px;
     position: relative;
     min-height: 310px;
@@ -29,6 +29,8 @@
     bottom: 0px;
     right: 0%;
     z-index: 1;
+    height: 312px;
+    transform: scaleX(-1);
 }
 
 .main_banner_plans {
@@ -155,7 +157,7 @@
     }
 
     .main_banner_image {
-        background-color: #5B8FCB;
+        background-color: var(--color-primary);
         max-width: 410px;
         height: clamp(424px, 53vw, 590px);
         display: flex;
@@ -187,7 +189,7 @@
 
     .plan:hover {
         cursor: pointer;
-        background-color: #5B8FCB;
+        background-color: var(--color-primary);
     }
 
     .plan:hover span {

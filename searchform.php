@@ -1,7 +1,7 @@
 <form role="search" method="get" id="searchform" class="searchform" action="<?php echo home_url('/'); ?>">
     <div class="search_container">
         <input type="search" id="s" name="s" value="" placeholder="Pesquisar no site" class="search_input" />
-        <button type="submit" value="buscar" id="searchsubmit"><img class="search_icon" src="<?php echo get_theme_file_uri('/img/search-icon.png') ?>" alt=""></button>
+        <button type="submit" value="buscar" id="searchsubmit" aria-label="botão de pesquisa"><img class="search_icon" src="<?php echo get_theme_file_uri('/img/search-icon.png') ?>" alt=""></button>
     </div>
 </form>
 
@@ -21,7 +21,15 @@
     .search_input {
         all: unset;
         padding-right: 20px;
+        padding-left: 20px;
         transform: translateX(20px);
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    .search_icon {
+
+       padding: 6px;
     }
 
     #searchsubmit {
@@ -31,4 +39,5 @@
         right: 8px;
         background-color: #F0F0F0;
     }
+
 </style>

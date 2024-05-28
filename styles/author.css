@@ -21,7 +21,7 @@
     max-width: clamp(185px, 43vw, 518px);
     max-height: 592px;
     border-radius: clamp(10px, 3vw, 42px);
-    box-shadow: clamp(5px, 3vw, 33px) clamp(5px, 3vw, 30px) 1px #5B8FCB;
+    box-shadow: clamp(5px, 3vw, 33px) clamp(5px, 3vw, 30px) 1px var(--color-primary);
 }
 
 .author_info {

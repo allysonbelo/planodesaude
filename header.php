@@ -52,7 +52,11 @@
 
     <header class="header_mobile">
         <div class="wrapper">
-            <img class="menu_hamburguer" src="<?php echo get_theme_file_uri('/img/menu-hamburguer.png') ?>" alt="Icone do menu mobile">
+            <svg class="menu_hamburguer" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                <path d="M3 12.5H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M3 6.5H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M3 18.5H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
             <div class="side_menu_mobile">
                 <div class="logo_mobile">
                     <a href="<?php echo home_url('/') ?>" aria-label="Logo plano de saúde">
@@ -69,7 +73,7 @@
             </div>
             <div class="logo_mobile">
                 <a href="<?php echo home_url('/') ?>" aria-label="Logo plano de saúde">
-                    <img src="<?php echo get_theme_file_uri('/img/logo_planodesaude_mobile.png') ?>" alt="">
+                    <img src="<?php echo get_theme_file_uri('/img/logo_planodesaude_mobile.svg') ?>" alt="">
                 </a>
             </div>
         </div>
@@ -115,7 +119,7 @@
                 subMenu.classList.toggle('show');
 
                 if (subMenu.classList.contains('show')) {
-                    this.style.color = '#5B8FCB';
+                    this.style.color = 'var(--color-primary)';
                     let link = document.appendChild;
                     console.log(link);
                 } else {

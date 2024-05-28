@@ -53,7 +53,7 @@
     $author_url = get_author_posts_url($author_id);
     ?>
 
-    <a href="<?php echo esc_url($author_url); ?>" aria-label="<?php echo esc_attr(sprintf(__('Posts by %s', 'your-theme-textdomain'), get_the_author())); ?>">
+    <a href="<?php echo esc_url($author_url); ?>" class="post_card_author_link" aria-label="<?php echo esc_attr(sprintf(__('Posts by %s', 'your-theme-textdomain'), get_the_author())); ?>">
         <div class="post_card_author">
             <?php echo get_avatar($author_id, 37); ?>
             <span><?php echo get_the_author(); ?></span>

@@ -25,7 +25,7 @@
     content: "";
     width: 100%;
     height: 100%;
-    background: #5b8fcb;
+    background: var(--color-primary);
     position: absolute;
     top: 0;
     left: 0;

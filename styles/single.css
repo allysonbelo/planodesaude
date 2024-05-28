@@ -26,7 +26,7 @@
 }
 
 .main_banner_image {
-    background-color: #5B8FCB;
+    background-color: var(--color-primary);
     max-width: 290px;
     height: clamp(314px, 53vw, 385px);
     display: flex;
@@ -207,7 +207,7 @@
 
     .single_info_author .single__post_category {
         display: block;
-        color: #5B8FCB;
+        color: var(--color-primary);
         font-size: 18px;
         font-style: normal;
         font-weight: 500;
