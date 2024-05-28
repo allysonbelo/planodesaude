@@ -1,3 +1,7 @@
+:root {
+    --color-primary: #305992;
+    /* --color-primary: #5B8FCB; */
+}
 body {
     font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
 }
@@ -90,7 +94,7 @@ td {
 
 th,
 td {
-    border: 1px solid #5B8FCB !important;
+    border: 1px solid var(--color-primary) !important;
 }
 
 ul {

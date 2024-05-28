@@ -7,7 +7,7 @@
 }
 
 .category_item_list.active {
-    background: #5B8FCB;
+    background: var(--color-primary);
     color: #FFFFFF;
 }
 
@@ -184,7 +184,7 @@
 .pds_theme_search {
     order: 4;
     border-radius: 20px;
-    background: #5B8FCB;
+    background: var(--color-primary);
     padding: 19px;
     display: flex;
     flex-direction: column;
@@ -558,7 +558,7 @@
 
     .latest_posts_category_list li:hover,
     .latest_posts_category_list li:hover a {
-        background: #5B8FCB;
+        background: var(--color-primary);
         color: #FFFFFF;
         cursor: pointer;
     }

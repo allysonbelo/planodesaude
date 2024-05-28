@@ -122,8 +122,15 @@
     font-size: clamp(12px, 1.9vw, 18px);
 }
 
+.post_card_author_link{
+    display: none;
+}
 
 @media screen and (min-width: 769px) {
+
+    .post_card_author_link{
+        display: block;
+    }
 
     .post_card_author {
         display: flex;

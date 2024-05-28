@@ -11,7 +11,7 @@
 }
 
 .planodesaude h2 span {
-    color: #5B8FCB;
+    color: var(--color-primary);
     font-weight: 700;
     font-size: clamp(24px, 4vw, 42px);
     font-style: normal;
@@ -145,7 +145,7 @@
 }
 
 .category_item_list.active {
-    background: #5B8FCB;
+    background: var(--color-primary);
     color: #FFFFFF;
 }
 
@@ -186,7 +186,7 @@
 
     .latest_posts_category_list li:hover,
     .latest_posts_category_list li:hover a {
-        background: #5B8FCB;
+        background: var(--color-primary);
         color: #FFFFFF;
         cursor: pointer;
     }
@@ -233,7 +233,7 @@
 
     .planodesaude::after {
         content: "Proteja quem você ama!";
-        color: #5B8FCB;
+        color: var(--color-primary);
         text-align: center;
         font-size: 24px;
         font-style: normal;

@@ -51,7 +51,8 @@ $custom_link = get_theme_mod('custom_link', ''); // Obtém o link personalizado 
             <?php
             } else {
             ?>
-                <img class="banner_image" src="<?php echo get_theme_file_uri('/img/doctor-presenting-mobile.avif') ?>" alt="Doutor de jaleco branco sorrindo" loading="lazy">
+                <!-- <img class="banner_image" src="<?php echo get_theme_file_uri('/img/doctor-presenting-mobile.avif') ?>" alt="Doutor de jaleco branco sorrindo" loading="lazy"> -->
+                <img class="banner_image" src="<?php echo get_theme_file_uri('/img/doctor-presenting-desktop.avif') ?>" alt="Doutor de jaleco branco sorrindo" loading="lazy">
                 <img class="banner_image_desktop" src="<?php echo get_theme_file_uri('/img/doctor-presenting-desktop.avif') ?>" alt="Doutor de jaleco branco sorrindo" loading="lazy">
             <?php
             }

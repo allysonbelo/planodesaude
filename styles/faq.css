@@ -74,7 +74,7 @@
 
 .faq_item_list.active {
     color: #ffffff;
-    background: #5B8FCB;
+    background: var(--color-primary);
 }
 
 .faq_answer {
