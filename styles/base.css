@@ -1,7 +1,7 @@
-:root {
-    --color-primary: #305992;
-    /* --color-primary: #5B8FCB; */
+html,body{
+    overflow-x: hidden;
 }
+
 body {
     font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
 }

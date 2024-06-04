@@ -18,6 +18,21 @@
     overflow: hidden;
 }
 
+.single_banner .banner_image_desktop {
+    position: absolute;
+    bottom: 0px;
+    width: clamp(544px, 60vw, 900px);
+    transform: translate(50px, 0px);
+}
+
+.single_banner .main_banner_content {
+    max-width: 58%;
+}
+
+.single_banner h2 {
+    max-width: 100%;
+}
+
 .main_banner .wrapper {
     display: flex;
     flex-direction: row;
@@ -195,7 +210,7 @@
     }
 
     .single_post_social img:hover {
-        filter: drop-shadow(1px 4px 3px #4d72aa);
+        filter: drop-shadow(1px 4px 3px var(--color-primary));
         scale: 1.1;
     }
 
@@ -242,7 +257,7 @@
 
     }
 
-    .singler_content .wp-element-caption{
+    .singler_content .wp-element-caption {
         min-width: 200px;
     }
 
@@ -259,11 +274,11 @@
         display: table-cell;
     }
 
-    .singler_content figure{
+    .singler_content figure {
         display: flex;
     }
 
-    .wp-block-image .aligncenter{
+    .wp-block-image .aligncenter {
         display: contents;
     }
 
@@ -276,7 +291,7 @@
         border-radius: 0px;
     }
 
-    .singler_content p img{
+    .singler_content p img {
         display: flex;
         width: 100%;
         max-width: 730px;

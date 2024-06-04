@@ -50,7 +50,7 @@ header li::before {
 }
 
 .side_menu_mobile .menu-item:has(.sub-menu):after {
-    content: "⯆";
+    content: "\25BC";
     position: absolute;
     right: 20px;
     top: 0px;

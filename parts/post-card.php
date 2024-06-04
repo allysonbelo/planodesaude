@@ -1,5 +1,5 @@
 <div class="post_card">
-    <a class="post_card_img" href="<?php the_permalink(); ?>">
+    <a class="post_card_img" href="<?php the_permalink(); ?>" aria-label="<?php echo esc_attr( get_the_title() ); ?>">
         <?php the_post_thumbnail('large'); ?>
     </a>
     <a class="post_card_title" href="<?php the_permalink(); ?>">

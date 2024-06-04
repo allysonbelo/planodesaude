@@ -72,5 +72,23 @@ function pds_customizer($wp_customize)
         'settings' => 'custom_link',
         'type' => 'text',
     ));
+
+    // Configração para escolher a cor principal do site
+    $wp_customize->add_section('custom_primary_settings', array(
+        'title' => __('Primary Color', 'pds2024'),
+    ));
+
+    $wp_customize->add_setting('primary_color', array(
+        'default' => '#305992', // Provide a default color
+        'sanitize_callback' => 'sanitize_hex_color', // Sanitize the input as a hex color
+    ));
+
+    $wp_customize->add_control('custom_color_control', array(
+        'label' => __('Site Main Color', 'pds2024'), // Use English for consistency
+        'section' => 'custom_primary_settings',
+        'description' => esc_html__('Add a color, e.g.: "#305992" or "red". Layout color: #5B8FCB', 'pds2024'), // Escape the HTML and translate the text
+        'settings' => 'primary_color',
+        'type' => 'color', // Use color control for color input
+    ));
 }
 add_action('customize_register', 'pds_customizer');

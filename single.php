@@ -98,10 +98,6 @@ get_template_part('/parts/single-banner');
                     }
                     ?>
 
-
-
-
-
                     <div class="single_post_social">
                         <?php
                         $linkedin_url = 'https://www.linkedin.com/sharing/share-offsite/?url=' . urlencode(get_permalink());
