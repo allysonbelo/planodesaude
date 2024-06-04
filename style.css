@@ -14,6 +14,10 @@
     Tags: blog, custom-menu, custom-logo, featured-images, ACF
 */
 
-html{
+html {
     scroll-behavior: smooth;
+}
+
+img, video, canvas {
+    overflow: hidden !important; /* ou scroll, ou auto, dependendo do comportamento desejado */
 }

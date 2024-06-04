@@ -47,6 +47,16 @@
 
     <?php wp_head(); ?>
 </head>
+<?php
+$custom_color_site = get_theme_mod('primary_color', '');
+?>
+<style>
+    :root {
+        /* --color-primary: #305992; */
+        /* --color-primary: #5B8FCB; */
+        --color-primary: <?php echo $custom_color_site ?>;
+    }
+</style>
 
 <body <?php body_class(); ?>>
 

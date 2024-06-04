@@ -15,7 +15,7 @@
 
 .main_banner h2 {
     color: #FFFFFF;
-    max-width: 240px;
+    max-width: 60%;
     font-weight: 400;
     font-size: clamp(18px, 2.7vw, 28px);
     margin-top: 20px;
@@ -27,10 +27,11 @@
 .main_banner .banner_image {
     position: absolute;
     bottom: 0px;
-    right: 0%;
+    right: 0;
     z-index: 1;
     height: 312px;
     transform: scaleX(-1);
+    width: auto;
 }
 
 .main_banner_plans {
@@ -100,6 +101,14 @@
 
 .main_banner_plans .text_cotacao {
     display: none;
+}
+
+.main_banner_image{
+    position: relative;
+}
+
+.banner_image{
+    right: -60px !important;
 }
 
 .link_cotacao {
@@ -177,6 +186,7 @@
         position: absolute;
         bottom: 0;
         height: 107%;
+        width: auto;
     }
 
     .main_banner h1 br {

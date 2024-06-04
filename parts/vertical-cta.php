@@ -9,5 +9,5 @@ $custom_link = get_theme_mod('custom_link', '');
     </p>
     <a class="<?php echo is_single() ? 'cta_button_single_style_1' : 'cta_button_single_style_2'; ?>" href="<?php echo $custom_link; ?>" target="_blank">
         Cotar plano de saúde agora!</a>
-    <img src="<?php echo get_theme_file_uri('/img/mulher-e-homem-se-abraçando-e-sorrindo.avif') ?>" alt="Mulhe sobre os hombro de homem, estão sorrindo">
+    <img src="<?php echo get_theme_file_uri('/img/mulher-e-homem-se-abracando-e-sorrindo.avif') ?>" alt="Mulhe sobre os hombro de homem, estão sorrindo">
 </aside>
