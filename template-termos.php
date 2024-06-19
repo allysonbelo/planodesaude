@@ -20,7 +20,9 @@ get_template_part('/parts/single-banner');
             <p><?php esc_html_e('Sorry, no posts matched your criteria.') ?></p>
         <?php endif; ?>
     </div>
-    <?php get_template_part('/parts/horizontal-cta') ?>
+    <div class="terms_cta">
+        <?php get_template_part('/parts/horizontal-cta') ?>
+    </div>
 </div>
 
 

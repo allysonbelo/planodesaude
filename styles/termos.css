@@ -26,3 +26,11 @@
     font-weight: 400;
     line-height: 132%;
 }
+
+@media screen and (min-width: 769px) {
+
+    .terms_cta .planodesaude_cta{
+        height: 477px;
+    }
+    
+}

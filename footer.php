@@ -5,7 +5,7 @@
         <div class="footer_content">
             <div class="logo_mobile">
                 <a href="<?php echo home_url('/') ?>" aria-label="Logo plano de saúde">
-                    <img src="<?php echo get_theme_file_uri('/img/logo_planodesaude_footer.avif') ?>" alt="logo planodesaude.net">
+                    <img src="<?php echo get_theme_file_uri('/img/logo_planodesaude_footer.webp') ?>" alt="logo planodesaude.net">
                 </a>
             </div>
             <nav>

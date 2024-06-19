@@ -3,8 +3,10 @@
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="p:domain_verify" content="77603d9d93164d81aa568f342f84d340" />
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FBFBFB" />
 
     <script>
         (function(i, s, o, g, r, a, m) {
@@ -74,11 +76,11 @@ $custom_color_site = get_theme_mod('primary_color', '');
                     </a>
                 </div>
                 <nav>
-                    <?php wp_nav_menu(array('theme_location' => 'pds_header_menu', 'depth' => 2, 'menu_class' => 'pds_header_menu')); ?>
+                    <?php wp_nav_menu(array('theme_location' => 'pds_header_menu', 'depth' => 1, 'menu_class' => 'pds_header_menu')); ?>
                 </nav>
-                <div class="header_search_mobile">
+                <!-- <div class="header_search_mobile">
                     <?php get_search_form(); ?>
-                </div>
+                </div> -->
                 <img class="close_menu" src="<?php echo get_theme_file_uri('/img/close-icon.png') ?>" alt="Fechar menu">
             </div>
             <div class="logo_mobile">
@@ -92,7 +94,7 @@ $custom_color_site = get_theme_mod('primary_color', '');
     <div class="wrapper">
 
         <header class="header_desktop">
-            <div>
+            <div class="header_desktop_logo">
                 <?php if (has_custom_logo()) {
                     the_custom_logo();
                 } else {
@@ -110,33 +112,42 @@ $custom_color_site = get_theme_mod('primary_color', '');
         </header>
     </div>
 
-    <script>
-        let hamburguer = document.querySelector('.menu_hamburguer');
-        hamburguer.addEventListener("click", () => {
-            let header_mobile = document.querySelector('.header_mobile');
-            header_mobile.classList.add('active');
+<script>
+    // Corrected: Moved the close_menu event listener outside of the hamburguer click event.
+    let close_menu = document.querySelector('.close_menu');
+    close_menu.addEventListener('click', () => {
+        let header_mobile = document.querySelector('.header_mobile');
+        header_mobile.classList.remove('active');
+    });
 
-            let close_menu = document.querySelector('.close_menu');
-            close_menu.addEventListener('click', () => {
-                header_mobile.classList.remove('active');
-            })
-        })
+    let hamburguer = document.querySelector('.menu_hamburguer');
+    hamburguer.addEventListener("click", () => {
+        let header_mobile = document.querySelector('.header_mobile');
+        header_mobile.classList.add('active');
+    });
 
-        document.querySelectorAll('.menu-item-has-children').forEach(item => {
-            item.addEventListener('click', function() {
+    // Corrected: Added event parameter to the function to access the event object.
+    document.addEventListener('click', function(event) {
+        let header_mobile = document.querySelector('.header_mobile');
+        if (!header_mobile.contains(event.target) && header_mobile.classList.contains('active')) {
+            header_mobile.classList.remove('active');
+        }
+    });
 
-                let subMenu = this.querySelector('.sub-menu');
-                subMenu.classList.toggle('show');
+    document.querySelectorAll('.menu-item-has-children').forEach(item => {
+        item.addEventListener('click', function() {
+            let subMenu = this.querySelector('.sub-menu');
+            subMenu.classList.toggle('show');
 
-                if (subMenu.classList.contains('show')) {
-                    this.style.color = 'var(--color-primary)';
-                    let link = document.appendChild;
-                    console.log(link);
-                } else {
-                    this.style.color = '';
-                }
-            });
+            // Corrected: Use class toggling instead of direct style manipulation.
+            if (subMenu.classList.contains('show')) {
+                this.classList.add('highlight');
+            } else {
+                this.classList.remove('highlight');
+            }
         });
-    </script>
+    });
+</script>
+
 
     <main>

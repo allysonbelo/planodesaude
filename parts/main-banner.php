@@ -4,8 +4,8 @@ $custom_link = get_theme_mod('custom_link', ''); // Obtém o link personalizado 
 <div class="main_banner">
     <div class="wrapper">
         <div class="main_banner_content">
-            <h1>Cote seu plano de <br> saúde e odontologico <br> em menos de 5 <br> minutos</h1>
-            <h2>Para começar qual plano você gostaria de cotar?</h2>
+            <h1>Faça a cotação do seu plano de saúde e odontológico em menos de 5 minutos</h1>
+            <h2>Comece agora: qual é o plano ideal para você?</h2>
             <div class="main_banner_plans">
                 <!-- Use onmouseover="preloadPage(this)" no link para realizar a chamada do script que faz o pre carregamento da pagina ao passar o mouse sobre o link -->
                 <a href="<?php echo $custom_link ?>" target="_blank">
@@ -46,14 +46,13 @@ $custom_link = get_theme_mod('custom_link', ''); // Obtém o link personalizado 
             <?php
             if (is_home()) {
             ?>
-                <img class="banner_image" src="<?php echo get_theme_file_uri('/img/homen-gritando-em-um-megaphone-mobile.avif') ?>" alt="Homen gritando em um megafone" loading="lazy">
-                <img class="banner_image_desktop" src="<?php echo get_theme_file_uri('/img/homen-gritando-em-um-megaphone.avif') ?>" alt="Homen gritando em um megafone" loading="lazy">
+                <img class="banner_image banner_image_blog" src="<?php echo get_theme_file_uri('/img/homen-gritando-em-um-megaphone-mobile.webp') ?>" alt="Homen gritando em um megafone" loading="lazy">
+                <img class="banner_image_desktop" src="<?php echo get_theme_file_uri('/img/homen-gritando-em-um-megaphone.webp') ?>" alt="Homen gritando em um megafone" loading="lazy">
             <?php
             } else {
             ?>
-                <!-- <img class="banner_image" src="<?php echo get_theme_file_uri('/img/doctor-presenting-mobile.avif') ?>" alt="Doutor de jaleco branco sorrindo" loading="lazy"> -->
-                <img class="banner_image" src="<?php echo get_theme_file_uri('/img/doctor-presenting-desktop.avif') ?>" alt="Doutor de jaleco branco sorrindo" loading="lazy">
-                <img class="banner_image_desktop" src="<?php echo get_theme_file_uri('/img/doctor-presenting-desktop.avif') ?>" alt="Doutor de jaleco branco sorrindo" loading="lazy">
+                <img class="banner_image" src="<?php echo get_theme_file_uri('/img/doctor-presenting-desktop.webp') ?>" alt="Doutor de jaleco branco sorrindo" loading="lazy">
+                <img class="banner_image_desktop" src="<?php echo get_theme_file_uri('/img/doctor-presenting-desktop.webp') ?>" alt="Doutor de jaleco branco sorrindo" loading="lazy">
             <?php
             }
             ?>

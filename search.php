@@ -11,7 +11,7 @@ get_template_part('/parts/single-banner');
         <?php
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $args = array(
-            'posts_per_page' => 12,
+            'posts_per_page' => 13,
             'paged'          => $paged,
             's'              => get_search_query(),
         );
@@ -25,13 +25,21 @@ get_template_part('/parts/single-banner');
             <p class="search_results_count">
                 <?php
                 if ($query->have_posts()) {
-                    // Exibe o total de posts encontrados
-                    echo $query->found_posts . ' ' . _n('resultado encontrado', 'resultados encontrados', $query->found_posts, 'textdomain');
+                    // Check the post type of the first post in the query.
+                    $query->the_post(); // Set up post data.
+                    if ('post' == get_post_type()) {
+                        // Exibe o total de posts encontrados
+                        $found_posts = esc_html($query->found_posts);
+                        $result_text = _n('resultado encontrado', 'resultados encontrados', $query->found_posts, 'textdomain');
+                        echo $found_posts . ' ' . $result_text;
+                    }
+                    wp_reset_postdata(); // Reset post data after checking post type.
                 } else {
                     // Mensagem para quando nenhum resultado é encontrado
-                    _e('Nenhum resultado encontrado.', 'textdomain');
+                    echo esc_html__('Nenhum resultado encontrado.', 'textdomain');
                 }
                 ?>
+
             </p>
         </header>
 

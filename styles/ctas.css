@@ -2,7 +2,7 @@
 .planodesaude_cta {
     margin-top: clamp(10px, 2vw, 32px);
     margin-bottom: clamp(20px, 8vw, 100px);
-    background: rgba(115, 167, 227, 1) url('../../../../wp-content/themes/pds2024/img/casal-abracando-um-ao-outro-desktop.avif') no-repeat left center / cover;
+    background: rgba(115, 167, 227, 1) url('../../../../wp-content/themes/pds2024/img/casal-abracando-um-ao-outro-desktop.webp') no-repeat left center / cover;
     border-radius: 30px;
     overflow: hidden;
     padding: 15px;
@@ -10,6 +10,9 @@
     max-width: 1240px;
     margin-left: auto;
     margin-right: auto;
+    min-height: 187px;
+        display: flex;
+        align-items: center;
 }
 
 .planodesaude_cta .planodesaude_cta_content {
@@ -77,6 +80,23 @@
 
 @media screen and (min-width: 769px) {
 
+    .blog_cta .planodesaude_cta {
+            background: url('../img/casal-abracando-um-ao-outro-desktop.webp') no-repeat left center / cover;
+            padding: 34px 62px 22px 16px;
+            height: 477px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+        }
+    
+        .home .planodesaude_cta {
+            height: 477px;
+        }
+    
+        .home .planodesaude_cta .planodesaude_cta_content h2 {
+            text-align: left;
+        }
     .planodesaude_aside_cta {
         display: flex;
         flex-direction: column;
@@ -85,7 +105,7 @@
         max-width: 295px;
         width: 100%;
         margin-right: 20px;
-        height: 1029px;
+        height: 1009px;
         position: relative;
         overflow: hidden;
         background-color: #aedfe6;
@@ -136,7 +156,7 @@
 
     .planodesaude_aside_cta img {
         position: absolute;
-        top: 0;
+        bottom: -20px;
         left: 0;
         z-index: 1;
     }
@@ -145,19 +165,8 @@
         display: none;
     }
 
-    .planodesaude_cta {
-        background: url('../img/casal-abracando-um-ao-outro-desktop.avif') no-repeat left center / cover;
-        padding: 34px 62px 22px 16px;
-        min-height: 477px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: center;
-    }
-
     .single_container .planodesaude_cta {
-        background: url('../img/casal-abracando-um-ao-outro-desktop.avif') no-repeat left top / cover;
-        min-height: auto;
+        background: url('../img/casal-abracando-um-ao-outro-desktop.webp') no-repeat left top / cover;
         margin: 20px 0px;
     }
 
@@ -165,8 +174,13 @@
         display: none;
     }
 
-    .planodesaude_cta_content {
-        max-width: clamp(356px, 50vw, 698px);
+        .planodesaude_cta .planodesaude_cta_content {
+            max-width: clamp(300px, 40vw, 694px);
+            position: absolute;
+            right: 2%;
+            left: auto;
+            display: flex;
+            align-items: center;
     }
 
     .planodesaude_cta_content a {
@@ -191,6 +205,13 @@
         font-style: normal;
         line-height: normal;
         margin-top: 20px;
+        width: 80%;
     }
 
+        /* .planodesaude_cta .cta_button_single_style_1:hover{
+            background: #FFF;
+            color: #1E1E1E !important;
+            border: 2px solid #1E1E1E;
+            font-weight: 500;
+        } */
 }

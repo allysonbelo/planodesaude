@@ -3,7 +3,7 @@ get_header();
 ?>
 <div class="page_404">
     <div class="page_404_img">
-        <img src="<?php echo get_theme_file_uri('/img/homen-demonstrando-ter-feito-algo-errado.avif') ?>" alt="homen gesticulando ter feito algo errado levando a mão na cabeça">
+        <img src="<?php echo get_theme_file_uri('/img/homen-demonstrando-ter-feito-algo-errado.webp') ?>" alt="homen gesticulando ter feito algo errado levando a mão na cabeça">
     </div>
 
     <div class="page_404_content">

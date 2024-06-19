@@ -17,23 +17,25 @@ footer li::before{
 }
 
 .footer_content .logo_mobile img {
-    max-width: 296px;
-    height: 53px;
+    max-width: clamp(219px, 28vw, 296px);
+    height: auto;
 }
 
 .footer_menu {
     display: flex;
     align-items: center;
-    justify-content: center;
-    column-gap: 10px;
+    justify-content: space-between;
+    column-gap: clamp(0px, 0.7vw, 10px);
     flex-wrap: wrap;
+    min-width: clamp(349px, 45vw, 564px);
+    margin: 0px;
 }
 
 .footer_menu a {
     text-decoration: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 16px;
+    font-size: clamp(12px, 2vw, 16px);
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -61,4 +63,5 @@ footer li::before{
 .footer_copy p {
     text-align: center;
     color: #FFFFFF;
+    font-size: clamp(12px, 2vw, 16px);
 }

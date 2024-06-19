@@ -43,10 +43,20 @@ header li::before {
     display: flex;
     flex-direction: column;
     row-gap: 40px;
+    margin: 0;
 }
 
 .side_menu_mobile .menu-item {
     position: relative;
+}
+
+.side_menu_mobile .menu-item:hover{
+    padding-left: 3px;
+    border-left: 2px solid #4D72AA;
+}
+
+.pds_header_menu .menu-item:hover a{
+    color: #4D72AA;
 }
 
 .side_menu_mobile .menu-item:has(.sub-menu):after {
@@ -107,7 +117,7 @@ header li::before {
     text-align: center;
     font-size: 14px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: normal;
 }
 
@@ -121,7 +131,11 @@ header li::before {
     }
 
     .pds_header_menu .menu-item a {
-        font-size: 16px;
+        font-size: 18px;
+    }
+
+    .pds_header_menu .menu-item a:hover{
+        color: inherit;
     }
 
     .header_desktop {
@@ -143,6 +157,11 @@ header li::before {
     .pds_header_menu {
         display: flex;
         column-gap: clamp(10px, 1.6vw, 18px);
+        margin: 0;
+    }
+
+    .pds_header_menu li{
+        text-align: center;
     }
 
     .pds_header_menu li a {
