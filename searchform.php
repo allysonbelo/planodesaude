@@ -2,7 +2,7 @@
     <div class="search_container">
         <input type="search" name="s" value="" placeholder="Pesquisar no site" class="search_input" />
         <button type="submit" value="buscar" aria-label="botão de pesquisa" class="search_btn">
-            <img class="search_icon" src="<?php echo get_theme_file_uri('/img/search-icon.png') ?>" alt="">
+            <img class="search_icon" src="<?php echo get_theme_file_uri('/img/search_blog.svg') ?>" alt="">
         </button>
     </div>
 </form>
@@ -12,13 +12,14 @@
         border-radius: 43px;
         background: #F0F0F0;
         display: inline-flex;
-        padding: 8px ;
+        padding: 8px;
         justify-content: center;
         align-items: center;
         gap: 76px;
         max-width: clamp(180px, 15vw, 268px);
         position: relative;
         overflow: hidden;
+        min-width: 190px;
     }
 
     .search_input {
@@ -50,5 +51,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        background-color: transparent;
     }
+
+    /* .blog .pds_theme_search .search_btn {
+        background-color: #4D72AA;
+
+    } */
 </style>

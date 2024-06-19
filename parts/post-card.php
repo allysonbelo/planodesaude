@@ -1,7 +1,18 @@
 <div class="post_card">
-    <a class="post_card_img" href="<?php the_permalink(); ?>" aria-label="<?php echo esc_attr( get_the_title() ); ?>">
-        <?php the_post_thumbnail('large'); ?>
+    <a class="post_card_img" href="<?php echo esc_url(get_permalink()); ?>" aria-label="<?php echo esc_attr(get_the_title()); ?>">
+        <?php
+        if (has_post_thumbnail()) {
+            the_post_thumbnail('large');
+        } else {
+        ?>
+            <div class="default_image_post">
+                <img class="default_image_post_img" src="<?php echo esc_url(get_theme_file_uri('/img/favicon.png')); ?>" alt="<?php esc_attr_e('Default post image', 'text-domain'); ?>">
+            </div>
+        <?php
+        }
+        ?>
     </a>
+
     <a class="post_card_title" href="<?php the_permalink(); ?>">
         <?php
         $title = get_the_title(); // Obtenha o título
@@ -47,7 +58,7 @@
         ?>
     </p>
     <a class="post_card_link" href="<?php the_permalink(); ?>">Ler artigo</a>
-    
+
     <?php
     $author_id = get_the_author_meta('ID');
     $author_url = get_author_posts_url($author_id);

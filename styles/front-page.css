@@ -50,19 +50,19 @@
 }
 
 .planodesaude_grid_item:nth-child(1) {
-    background: #4D72AA url('../img/mapa-brazil.avif') no-repeat center right / 83px;
+    background: #4D72AA url('../img/mapa-brazil.webp') no-repeat center right / 83px;
 }
 
 .planodesaude_grid_item:nth-child(2) {
-    background: #4D72AA url('../img/calculadora.avif') no-repeat center right / 73px;
+    background: #4D72AA url('../img/calculadora.webp') no-repeat center right / 73px;
 }
 
 .planodesaude_grid_item:nth-child(3) {
-    background: #4D72AA url('../img/docs.avif') no-repeat center right / 73px;
+    background: #4D72AA url('../img/docs.webp') no-repeat center right / 73px;
 }
 
 .planodesaude_grid_item:nth-child(4) {
-    background: #4D72AA url('../img/save-money.avif') no-repeat center right / 89px;
+    background: #4D72AA url('../img/save-money.webp') no-repeat center right / 89px;
 }
 
 .planodesaude_grid_item span {
@@ -152,6 +152,10 @@
 
 @media screen and (min-width: 769px) {
 
+    .latest_posts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
     .latest_posts_category_list li {
         white-space: normal;
     }
@@ -209,16 +213,23 @@
 
     .post_card {
         margin-right: 0px;
+        flex: 1 1 287px;
+        width: 100%;
+        max-width: 377px;
     }
 
     .latest_posts {
         flex-wrap: wrap;
         gap: 40px;
         justify-content: center;
+        max-width: 1240px;
+            margin: 0 auto;
     }
 
     .planodesaude {
         position: relative;
+        max-width: 1240px;
+            margin: 0 auto;
     }
 
     .planodesaude::before {
@@ -263,9 +274,10 @@
     }
 
     .planodesaude_grid_item {
-        width: 262px;
-        height: 285px;
-        flex: none;
+        width: 100%;
+            height: clamp(140px, 16vw, 285px);
+            flex: 1 1 139px;
+            max-width: 262px;
     }
 
     .planodesaude_grid_item span {
@@ -273,19 +285,19 @@
     }
 
     .planodesaude_grid_item:nth-child(1) {
-        background: #1E1E1E url('../img/mapa-brazil.avif') no-repeat center right / 131px;
+        background: #1E1E1E url('../img/mapa-brazil.webp') no-repeat center right / clamp(60px, 7.6vw, 131px);
     }
 
     .planodesaude_grid_item:nth-child(2) {
-        background: #1E1E1E url('../img/calculadora.avif') no-repeat center right / 116px;
+        background: #1E1E1E url('../img/calculadora.webp') no-repeat center right / clamp(60px, 7.6vw, 116px);
     }
 
     .planodesaude_grid_item:nth-child(3) {
-        background: #1E1E1E url('../img/docs.avif') no-repeat center right / 116px;
+        background: #1E1E1E url('../img/docs.webp') no-repeat center right / clamp(60px, 7.6vw, 116px);
     }
 
     .planodesaude_grid_item:nth-child(4) {
-        background: #1E1E1E url('../img/save-money.avif') no-repeat center right / 141px;
+        background: #1E1E1E url('../img/save-money.webp') no-repeat center right / clamp(60px, 7.6vw, 141px);
     }
 }
 

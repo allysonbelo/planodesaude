@@ -121,6 +121,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
+    align-items: center;
+        justify-content: center;
 }
 
 .pds_theme_cat a {
@@ -132,32 +134,32 @@
     width: 100%;
     height: 121px;
     border-radius: 12px;
-    flex: 1 1 170px;
+    flex: 1 1 148px;
     position: relative;
-
     display: flex;
     align-items: flex-end;
     padding: 10px;
+    /* max-width: clamp(154px, 21vw, 236px); */
 }
 
 .pds_theme_cat_card:nth-child(1) {
-    background: #73A7E3 url('../img/card1.avif') no-repeat center center / cover;
+    background: #73A7E3 url('../img/card1.webp') no-repeat center center / cover;
 }
 
 .pds_theme_cat>a:nth-child(2)>div {
-    background: #E1CC60 url('../img/card2.avif') no-repeat center center / cover;
+    background: #E1CC60 url('../img/card2.webp') no-repeat center center / cover;
 }
 
 .pds_theme_cat>a:nth-child(3)>div {
-    background: #9ACC72 url('../img/card3.avif') no-repeat center center / cover;
+    background: #9ACC72 url('../img/card3.webp') no-repeat center center / cover;
 }
 
 .pds_theme_cat>a:nth-child(4)>div {
-    background: #A365D3 url('../img/card4.avif') no-repeat center center / cover;
+    background: #A365D3 url('../img/card4.webp') no-repeat center center / cover;
 }
 
 .pds_theme_cat>a:nth-child(5)>div {
-    background: #F57272 url('../img/card5.avif') no-repeat center center / cover;
+    background: #F57272 url('../img/card5.webp') no-repeat center center / cover;
 }
 
 .pds_ca_card_item {
@@ -346,10 +348,10 @@
 
     .pds_theme_cards {
         order: 4;
-        display: flex;
+        display: grid;
         gap: 20px;
-        flex-wrap: wrap;
         justify-content: space-between;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     .pds_theme_search {

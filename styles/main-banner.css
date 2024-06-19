@@ -1,7 +1,7 @@
 .main_banner {
     border-radius: 0px 0px 20px 20px;
     background-color: var(--color-primary);
-    padding-top: 45px;
+    padding-top: clamp(20px, 10vw, 75px);
     position: relative;
     min-height: 310px;
     margin-bottom: 40px;
@@ -11,6 +11,7 @@
     color: #FFFFFF;
     position: relative;
     z-index: 2;
+    max-width: clamp(220px, 54vw, 650px);
 }
 
 .main_banner h2 {
@@ -32,6 +33,11 @@
     height: 312px;
     transform: scaleX(-1);
     width: auto;
+}
+
+.main_banner .banner_image.banner_image_blog{
+    transform: none;
+    right: -23px !important;
 }
 
 .main_banner_plans {
@@ -135,6 +141,13 @@
 }
 
 @media screen and (min-width: 769px) {
+
+    .link_cotacao:hover{
+        background: #FFF;
+        color: #1E1E1E;
+        border: 2px solid #1E1E1E;
+        font-weight: 500;
+    }
     .main_banner {
         background-color: #FFFFFF;
     }
@@ -229,6 +242,14 @@
         line-height: normal;
         visibility: hidden;
     }
+
+    /* .main_banner_plans .text_cotacao:hover{
+        background-color: #9DE298;
+    }
+
+    .main_banner_plans .text_cotacao:active{
+        background-color: #50B848;
+    } */
 
     .main_banner_plans .text_cotacao::before{
         content: "";
