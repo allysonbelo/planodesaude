@@ -106,7 +106,7 @@
     line-height: 132%;
 }
 
-.singler_content .back_to_home{
+.singler_content .back_to_home {
     color: #000;
 }
 
@@ -282,8 +282,8 @@
         display: flex;
     }
 
-    .wp-block-image .aligncenter {
-        display: contents;
+    .singler_content .wp-block-image .aligncenter {
+        display: table-cell;
     }
 
     .singler_content img {
