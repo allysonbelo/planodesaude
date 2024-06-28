@@ -12,21 +12,20 @@ get_template_part('/parts/main-banner');
                 <?php get_search_form(); ?>
             </div>
             <ul class="latest_posts_category_list">
-
                 <?php
                 // IDs das três categorias específicas que você deseja exibir
                 $category_ids = array(279, 282, 278);
-
+            
                 foreach ($category_ids as $category_id) {
                     $category = get_category($category_id);
                     if ($category && !is_wp_error($category)) {
                         $category_url = get_category_link($category->term_id);
-                        echo '<a href="' . esc_url($category_url) . '"><li class="category_item_list">' . esc_html($category->name) . '</li></a>';
+                        echo '<li class="category_item_list"><a href="' . esc_url($category_url) . '">' . esc_html($category->name) . '</a></li>';
                     }
                 }
-
                 ?>
             </ul>
+            
 
         </div>
 
@@ -164,10 +163,10 @@ get_template_part('/parts/main-banner');
                 'current'   => max(1, get_query_var('paged')),
                 'total'     => $mobile_query->max_num_pages,
                 'mid_size'  => 1,
-                'prev_text' => __('<svg xmlns="http://www.w3.org/2000/svg" width="7" height="11" viewBox="0 0 7 11" fill="none">
+                'prev_text' => __('<svg xmlns="http://www.w3.org/2000/svg" width="7" height="11" viewBox="0 0 7 11" fill="none" aria-label="Botão postes anteriores">
                 <path d="M6 9.21484L1 5.21484L6 1.21484" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>', 'textdomain'), // Replace with appropriate SVG or text
-                'next_text' => __('<svg xmlns="http://www.w3.org/2000/svg" width="6" height="11" viewBox="0 0 6 11" fill="none">
+                'next_text' => __('<svg xmlns="http://www.w3.org/2000/svg" width="6" height="11" viewBox="0 0 6 11" fill="none" aria-label="Botão proximos postes">
                 <path d="M1 9.21484L5 5.21484L1 1.21484" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>', 'textdomain'),     // Replace with appropriate SVG or text
             ));
@@ -244,7 +243,7 @@ get_template_part('/parts/main-banner');
 
 <section>
     <div class="wrapper">
-        <div class="blog_authors">
+        <div id="autores" class="blog_authors">
             <h2 id="blog_latest_posts" class="blog_title_h2">Top autores</h2>
             <div class="blog_authors_cards">
                 <?php

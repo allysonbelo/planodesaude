@@ -100,7 +100,7 @@
 
 .latest_posts {
     display: flex;
-    overflow-y: hidden;
+    overflow-y: auto;
     scrollbar-width: none;
     padding-bottom: 20px;
 }

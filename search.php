@@ -42,40 +42,40 @@ get_template_part('/parts/single-banner');
 
             </p>
         </header>
-
-        <div class="pdscategory_content">
-            <?php
-            if ($query->have_posts()) :
-                while ($query->have_posts()) : $query->the_post();
-                    get_template_part('/parts/post-card');
-                endwhile;
-
-                wp_reset_postdata();
-
-            else :
-                $recent_args = array(
-                    'posts_per_page' => 3,
-                    'posts_status' => 'publish',
-                    'orderby' => 'date',
-                    'order' => 'DESC'
-                );
-
-                $recent_query = new WP_Query($recent_args); ?>
-
-
-            <?php
-
-                if ($recent_query->have_posts()) :
-                    echo '<h3>' . __('Últimos Posts Publicados', 'textdomain') . '</h3>';
-                    echo '<div class="pdscategory_content">';
-                    while ($recent_query->have_posts()) : $recent_query->the_post();
+        <div class="pdscategory_content_founded">
+            <div class="pdscategory_content">
+                <?php
+                if ($query->have_posts()) :
+                    while ($query->have_posts()) : $query->the_post();
                         get_template_part('/parts/post-card');
                     endwhile;
-                    echo '</div>';
+
                     wp_reset_postdata();
+
+                else :
+                    $recent_args = array(
+                        'posts_per_page' => 3,
+                        'posts_status' => 'publish',
+                        'orderby' => 'date',
+                        'order' => 'DESC'
+                    );
+
+                    $recent_query = new WP_Query($recent_args); ?>
+
+                <?php
+
+                    if ($recent_query->have_posts()) :
+                        echo '<h3>' . __('Últimos Posts Publicados', 'textdomain') . '</h3>';
+                        echo '<div class="pdscategory_content_not_found">';
+                        while ($recent_query->have_posts()) : $recent_query->the_post();
+                            get_template_part('/parts/post-card');
+                        endwhile;
+                        echo '</div>';
+                        wp_reset_postdata();
+                    endif;
                 endif;
-            endif;
-            ?>
+                ?>
+            </div>
 
         </div>
         <div class="pdspagination">

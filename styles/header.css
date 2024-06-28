@@ -55,8 +55,8 @@ header li::before {
     border-left: 2px solid #4D72AA;
 }
 
-.pds_header_menu .menu-item:hover a{
-    color: #4D72AA;
+.pds_header_menu .menu-item:hover > a{
+    text-shadow: 0px 0px 1px black;
 }
 
 .side_menu_mobile .menu-item:has(.sub-menu):after {
@@ -126,15 +126,24 @@ header li::before {
 }
 
 @media screen and (min-width: 1024px) {
+    .header_desktop_logo a{
+        line-height: 0;
+    }
+
+    .pds_header_menu .menu-item-has-children .sub-menu:hover .menu-item a{
+        
+    }
+
     .header_mobile {
         display: none;
     }
 
     .pds_header_menu .menu-item a {
-        font-size: 18px;
+        font-size: clamp(14px, 1.3vw, 18px);
+        padding-bottom: 40px;
     }
 
-    .pds_header_menu .menu-item a:hover{
+    .pds_header_menu .menu-item li:hover a{
         color: inherit;
     }
 
@@ -156,12 +165,12 @@ header li::before {
 
     .pds_header_menu {
         display: flex;
-        column-gap: clamp(10px, 1.6vw, 18px);
+        column-gap: clamp(10px, 1.6vw, 25px);
         margin: 0;
     }
 
     .pds_header_menu li{
-        text-align: center;
+        text-align: left;
     }
 
     .pds_header_menu li a {
@@ -180,6 +189,8 @@ header li::before {
         opacity: 0;
         transition: opacity .2s ease-in-out;
         border-radius: 10px;
+        margin-left: 0;
+        margin-top: 17px;
     }
 
     .pds_header_menu li:hover ul {

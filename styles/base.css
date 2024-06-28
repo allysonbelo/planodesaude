@@ -122,3 +122,82 @@ ul li::before {
     line-height: normal;
     text-decoration: none;
 } 
+
+.page_container ul{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.page_container h2{
+    margin-bottom: 10px;
+}
+
+/* Certifique-se de que o contêiner permita overflow visível */
+.container-cards {
+    overflow: visible; /* ou overflow-x: visible; se for apenas horizontal */
+}
+
+.animar-secao {
+    opacity: 0;
+    transform: translateX(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    position: relative;
+}
+
+.animar-secao::after {
+    content: '';
+    background-image: url(../../../../wp-content/themes/pds2024/img/swipe_left.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    right: -50px;
+    top: 10%;
+    transition: opacity 0.6s ease-out;
+}
+
+
+.animar-secao.visivel {
+    opacity: 1;
+}
+
+.animar-secao.visivel::after {
+    animation: move_arrow 2s infinite;
+}
+
+.animar-secao.visivel.parar-animacao::after {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, visibility 0s 0.6s; /* Atraso na visibilidade para garantir que a transição de opacidade ocorra primeiro */
+}
+
+@keyframes move_arrow {
+    0% {
+        transform: translate(-30px, -50%);
+    }
+
+    50% {
+        transform: translate(-80px, -50%); /* Mover para a esquerda */
+    }
+
+    100% {
+        transform: translate(-30px, -50%); /* Voltar para a posição original */
+    }
+}
+
+
+@media screen and (width > 768px) {
+    .animar-secao::after{
+        display: none;
+    }
+
+    .animar-secao.visivel{
+        animation: none;
+    }
+
+    .animar-secao {
+        opacity: 1;
+    }
+}
