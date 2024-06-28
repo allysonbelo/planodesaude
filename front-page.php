@@ -23,6 +23,7 @@ get_template_part('/parts/main-banner');
             <h2>Últimos artigos</h2>
             <a href="<?php echo home_url('/blog') ?>">+ Ver todos</a>
         </div>
+
         <div class="latest_posts_search">
             <div class="header_search_mobile">
                 <?php get_search_form(); ?>
@@ -42,46 +43,50 @@ get_template_part('/parts/main-banner');
                 ?>
             </ul>
         </div>
-        <div class="latest_posts latest_posts_default">
-            <?php
-            $args = array(
-                'post_type' => 'post',
-                'posts_per_page' => 6,
-                'order' => 'DESC',
-                'ignore_sticky_posts' => 1,
-            );
-            $latest_posts = new WP_Query($args);
-            if ($latest_posts->have_posts()) :
-                while ($latest_posts->have_posts()) : $latest_posts->the_post();
-                    get_template_part('parts/post-card');
-                endwhile;
-            endif;
-            wp_reset_postdata();
-            ?>
-        </div>
-        <?php foreach ($categories as $category_id => $category_name) : ?>
-            <div class="latest_posts category_section_<?php echo esc_attr($category_id); ?>" style="display: none;">
+        
+        <div class="animar-secao">
+            <div class="latest_posts latest_posts_default">
                 <?php
                 $args = array(
                     'post_type' => 'post',
                     'posts_per_page' => 6,
-                    'category__in' => $category_id,
                     'order' => 'DESC',
                     'ignore_sticky_posts' => 1,
                 );
-                $category_posts = new WP_Query($args);
-                if ($category_posts->have_posts()) :
-                    while ($category_posts->have_posts()) : $category_posts->the_post();
+                $latest_posts = new WP_Query($args);
+                if ($latest_posts->have_posts()) :
+                    while ($latest_posts->have_posts()) : $latest_posts->the_post();
                         get_template_part('parts/post-card');
                     endwhile;
                 endif;
                 wp_reset_postdata();
                 ?>
             </div>
-        <?php endforeach; ?>
+            <?php foreach ($categories as $category_id => $category_name) : ?>
+                <div class="latest_posts category_section_<?php echo esc_attr($category_id); ?>" style="display: none;">
+                    <?php
+                    $args = array(
+                        'post_type' => 'post',
+                        'posts_per_page' => 6,
+                        'category__in' => $category_id,
+                        'order' => 'DESC',
+                        'ignore_sticky_posts' => 1,
+                    );
+                    $category_posts = new WP_Query($args);
+                    if ($category_posts->have_posts()) :
+                        while ($category_posts->have_posts()) : $category_posts->the_post();
+                            get_template_part('parts/post-card');
+                        endwhile;
+                    endif;
+                    wp_reset_postdata();
+                    ?>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </section>
 
     <?php get_template_part('/parts/horizontal-cta') ?>
+
 </div>
 
 <script>

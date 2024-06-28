@@ -24,7 +24,7 @@ footer li::before{
 .footer_menu {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     column-gap: clamp(0px, 0.7vw, 10px);
     flex-wrap: wrap;
     min-width: clamp(349px, 45vw, 564px);
@@ -42,7 +42,7 @@ footer li::before{
     display: block;
     transform: scale(1);
     cursor: pointer;
-    padding: 3px;
+    padding: 6px;
 }
 
 .foooer_social {

@@ -61,6 +61,7 @@ $custom_color_site = get_theme_mod('primary_color', '');
 </style>
 
 <body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
 
     <header class="header_mobile">
         <div class="wrapper">
@@ -112,42 +113,42 @@ $custom_color_site = get_theme_mod('primary_color', '');
         </header>
     </div>
 
-<script>
-    // Corrected: Moved the close_menu event listener outside of the hamburguer click event.
-    let close_menu = document.querySelector('.close_menu');
-    close_menu.addEventListener('click', () => {
-        let header_mobile = document.querySelector('.header_mobile');
-        header_mobile.classList.remove('active');
-    });
-
-    let hamburguer = document.querySelector('.menu_hamburguer');
-    hamburguer.addEventListener("click", () => {
-        let header_mobile = document.querySelector('.header_mobile');
-        header_mobile.classList.add('active');
-    });
-
-    // Corrected: Added event parameter to the function to access the event object.
-    document.addEventListener('click', function(event) {
-        let header_mobile = document.querySelector('.header_mobile');
-        if (!header_mobile.contains(event.target) && header_mobile.classList.contains('active')) {
+    <script>
+        // Corrected: Moved the close_menu event listener outside of the hamburguer click event.
+        let close_menu = document.querySelector('.close_menu');
+        close_menu.addEventListener('click', () => {
+            let header_mobile = document.querySelector('.header_mobile');
             header_mobile.classList.remove('active');
-        }
-    });
+        });
 
-    document.querySelectorAll('.menu-item-has-children').forEach(item => {
-        item.addEventListener('click', function() {
-            let subMenu = this.querySelector('.sub-menu');
-            subMenu.classList.toggle('show');
+        let hamburguer = document.querySelector('.menu_hamburguer');
+        hamburguer.addEventListener("click", () => {
+            let header_mobile = document.querySelector('.header_mobile');
+            header_mobile.classList.add('active');
+        });
 
-            // Corrected: Use class toggling instead of direct style manipulation.
-            if (subMenu.classList.contains('show')) {
-                this.classList.add('highlight');
-            } else {
-                this.classList.remove('highlight');
+        // Corrected: Added event parameter to the function to access the event object.
+        document.addEventListener('click', function(event) {
+            let header_mobile = document.querySelector('.header_mobile');
+            if (!header_mobile.contains(event.target) && header_mobile.classList.contains('active')) {
+                header_mobile.classList.remove('active');
             }
         });
-    });
-</script>
+
+        document.querySelectorAll('.menu-item-has-children').forEach(item => {
+            item.addEventListener('click', function() {
+                let subMenu = this.querySelector('.sub-menu');
+                subMenu.classList.toggle('show');
+
+                // Corrected: Use class toggling instead of direct style manipulation.
+                if (subMenu.classList.contains('show')) {
+                    this.classList.add('highlight');
+                } else {
+                    this.classList.remove('highlight');
+                }
+            });
+        });
+    </script>
 
 
     <main>

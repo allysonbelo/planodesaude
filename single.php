@@ -126,29 +126,38 @@ get_template_part('/parts/single-banner');
 
 
                     <h2 class="related_title">Artigos relacionados</h2>
-                    <div class="latest_posts latest_posts_default">
-                        <?php
-                        $related_posts_args = array(
-                            'post_type' => 'post',
-                            'posts_per_page' => 3,
-                            'post__not_in' => array(get_the_ID()), // Exclui o post atual da lista
-                            'category__in' => wp_get_post_categories(get_the_ID()), // Filtra por categorias do post atual
-                            'orderby' => 'rand' // Ordena aleatoriamente
-                        );
-                        $related_posts_query = new WP_Query($related_posts_args);
+                    <div class="animar-secao">
+                        <div class="latest_posts latest_posts_default">
+                            <?php
+                            $related_posts_args = array(
+                                'post_type' => 'post',
+                                'posts_per_page' => 3,
+                                'post__not_in' => array(get_the_ID()), // Exclui o post atual da lista
+                                'category__in' => wp_get_post_categories(get_the_ID()), // Filtra por categorias do post atual
+                                'orderby' => 'rand' // Ordena aleatoriamente
+                            );
+                            $related_posts_query = new WP_Query($related_posts_args);
 
-                        if ($related_posts_query->have_posts()) {
-                            while ($related_posts_query->have_posts()) {
-                                $related_posts_query->the_post();
-                                get_template_part('parts/post-card'); // Inclui o template do card de post
+                            if ($related_posts_query->have_posts()) {
+                                while ($related_posts_query->have_posts()) {
+                                    $related_posts_query->the_post();
+                                    get_template_part('parts/post-card'); // Inclui o template do card de post
+                                }
+                                wp_reset_postdata(); // Reseta a query para evitar conflitos
+                            } else {
+                                echo '<p>Nenhum artigo relacionado encontrado.</p>';
                             }
-                            wp_reset_postdata(); // Reseta a query para evitar conflitos
-                        } else {
-                            echo '<p>Nenhum artigo relacionado encontrado.</p>';
-                        }
-                        ?>
+                            ?>
+                        </div>
                     </div>
                 </div>
+
+                <?php
+                if (comments_open() || get_comments_number()) {
+                    comments_template();
+                }
+                ?>
+
             <?php endwhile; ?>
         <?php endif; ?>
     </div>

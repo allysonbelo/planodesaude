@@ -11,8 +11,8 @@
     margin-left: auto;
     margin-right: auto;
     min-height: 187px;
-        display: flex;
-        align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .planodesaude_cta .planodesaude_cta_content {
@@ -81,22 +81,23 @@
 @media screen and (min-width: 769px) {
 
     .blog_cta .planodesaude_cta {
-            background: url('../img/casal-abracando-um-ao-outro-desktop.webp') no-repeat left center / cover;
-            padding: 34px 62px 22px 16px;
-            height: 477px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            justify-content: center;
-        }
-    
-        .home .planodesaude_cta {
-            height: 477px;
-        }
-    
-        .home .planodesaude_cta .planodesaude_cta_content h2 {
-            text-align: left;
-        }
+        background: url('../img/casal-abracando-um-ao-outro-desktop.webp') no-repeat left center / cover;
+        padding: 34px 62px 22px 16px;
+        height: 477px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .home .planodesaude_cta {
+        height: 477px;
+    }
+
+    .home .planodesaude_cta .planodesaude_cta_content h2 {
+        text-align: left;
+    }
+
     .planodesaude_aside_cta {
         display: flex;
         flex-direction: column;
@@ -154,6 +155,8 @@
         text-decoration: none;
     }
 
+    .single_container .planodesaude_aside_cta a:hover {}
+
     .planodesaude_aside_cta img {
         position: absolute;
         bottom: -20px;
@@ -174,13 +177,13 @@
         display: none;
     }
 
-        .planodesaude_cta .planodesaude_cta_content {
-            max-width: clamp(300px, 40vw, 694px);
-            position: absolute;
-            right: 2%;
-            left: auto;
-            display: flex;
-            align-items: center;
+    .planodesaude_cta .planodesaude_cta_content {
+        max-width: clamp(300px, 40vw, 694px);
+        position: absolute;
+        right: 2%;
+        left: auto;
+        display: flex;
+        align-items: center;
     }
 
     .planodesaude_cta_content a {
@@ -208,10 +211,18 @@
         width: 80%;
     }
 
-        /* .planodesaude_cta .cta_button_single_style_1:hover{
-            background: #FFF;
-            color: #1E1E1E !important;
-            border: 2px solid #1E1E1E;
-            font-weight: 500;
-        } */
+    .cta_button_single_style_2,
+    .single_container .planodesaude_aside_cta a,
+    .planodesaude_cta .cta_button_single_style_1 {
+        transition: color .2s ease, background .2s ease;
+    }
+
+    .cta_button_single_style_2:hover,
+    .single_container .planodesaude_aside_cta a:hover,
+    .planodesaude_cta .cta_button_single_style_1:hover {
+        background: #FFF;
+        color: #1E1E1E !important;
+        border: 2px solid #1E1E1E;
+        font-weight: 500;
+    }
 }
